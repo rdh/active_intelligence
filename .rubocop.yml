@@ -1,0 +1,77 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-factory_bot
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  NewCops: disable
+  Exclude:
+    - bin/**/*
+    - config/*
+    - config/environments/*
+    - config/initializers/**/*
+    - config/locales/*
+    - db/**/*
+    - log/**/*
+    - node_modules/**/*
+    - tmp/**/*
+    - vendor/**/*
+
+#############################################################################
+# Gemspec
+
+Gemspec/RequiredRubyVersion:
+  Enabled: false
+
+#############################################################################
+# Layout
+
+Layout/CaseIndentation:
+  IndentOneStep: true
+
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented_relative_to_receiver
+
+#############################################################################
+# Rails
+
+Rails/ReflectionClassName:
+  Enabled: false
+
+#############################################################################
+# RSpec
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NamedSubject:
+  Enabled: false
+
+RSpec/RepeatedExampleGroupBody:
+  Enabled: false
+
+#############################################################################
+# Style
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/RedundantReturn:
+  Enabled: false
