@@ -9,6 +9,11 @@ module ActiveIntelligence
         template = self.class.prompt_file(name)
         ERB.new(template).result(binding)
       end
+
+      def from_llm(name = nil, llm = nil)
+        llm ||= ActiveIntelligence::LLM::Config.adapter
+        return llm.generate(to_prompt(name))
+      end
     end
 
     class_methods do
