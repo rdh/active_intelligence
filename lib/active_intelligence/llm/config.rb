@@ -32,7 +32,8 @@ module ActiveIntelligence
       def self.yaml
         return @yaml if @yaml
 
-        yaml = YAML.safe_load(file, aliases: true)
+        erb = ERB.new(file).result
+        yaml = YAML.safe_load(erb, aliases: true)
         return @yaml = yaml.deep_symbolize_keys
       end
     end
