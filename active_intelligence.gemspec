@@ -23,4 +23,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rails', '>= 7.1.3'
 
   spec.add_dependency 'require_all'
+
+  spec.add_dependency 'ruby-openai'
 end

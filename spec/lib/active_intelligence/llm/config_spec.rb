@@ -3,6 +3,19 @@
 describe ActiveIntelligence::LLM::Config do
 
   ###############################################################################
+  # .adapter
+
+  describe '.adapter' do
+    subject { described_class.adapter }
+
+    let(:expected) { ActiveIntelligence::LLM::BaseLLM }
+
+    it('returns an adapter') { expect(subject).to be_a_kind_of(expected) }
+
+    context 'with an invalid '
+  end
+
+  ###############################################################################
   # .path
 
   describe '.path' do

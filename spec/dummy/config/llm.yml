@@ -1,2 +1,8 @@
+default: &base
+  adapter: base
+
+development:
+  <<: *base
+
 test:
-  adapter: mock
+  <<: *base

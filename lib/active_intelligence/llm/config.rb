@@ -4,15 +4,18 @@ module ActiveIntelligence
   module LLM
     class Config
 
-      # TODO: Move to BaseAdapter
       def self.adapter(key = Rails.env.to_sym)
         settings = settings(key)
 
         klass = [
           'ActiveIntelligence::LLM',
-          [settings[:llm].to_s.camelize, 'LLM'].join
+          [settings[:adapter].to_s.camelize, 'LLM'].join
         ].join('::').constantize
         return klass.new(settings)
+      end
+
+      def self.file
+        File.read(path)
       end
 
       def self.path
@@ -27,7 +30,10 @@ module ActiveIntelligence
       end
 
       def self.yaml
-        @yaml ||= YAML.load_file(path).deep_symbolize_keys
+        return @yaml if @yaml
+
+        yaml = YAML.safe_load(file, aliases: true)
+        return @yaml = yaml.deep_symbolize_keys
       end
     end
   end
