@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe 'Rubocop' do
   it('passes') { is_expected.to pass_rubocop }
 end

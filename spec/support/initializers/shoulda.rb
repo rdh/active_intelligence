@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # SEE: https://github.com/thoughtbot/shoulda-matchers?tab=readme-ov-file#rspec
 
 Shoulda::Matchers.configure do |config|
