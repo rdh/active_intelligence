@@ -95,6 +95,10 @@ GEM
       irb (~> 1.10)
       reline (>= 0.3.8)
     diff-lcs (1.5.1)
+    dotenv (3.0.2)
+    dotenv-rails (3.0.2)
+      dotenv (= 3.0.2)
+      railties (>= 6.1)
     drb (2.2.1)
     erubi (1.12.0)
     event_stream_parser (1.0.0)
@@ -298,6 +302,7 @@ PLATFORMS
 DEPENDENCIES
   active_intelligence!
   debug
+  dotenv-rails
   factory_bot_rails
   puma
   rspec-rails

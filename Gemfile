@@ -6,8 +6,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Specify your gem's dependencies in active_intelligence.gemspec.
 gemspec
 
+gem 'dotenv-rails'
 gem 'puma'
-
 gem 'sqlite3'
 
 gem 'sprockets-rails'

@@ -3,6 +3,9 @@
 module ActiveIntelligence
   module LLM
     class BaseLLM
+
+      attr_reader :settings
+
       def initialize(settings)
         @settings = settings
       end

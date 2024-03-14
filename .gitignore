@@ -10,3 +10,6 @@
 /spec/dummy/tmp/
 
 /.idea/
+
+.env
+!/.env.template
