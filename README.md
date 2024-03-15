@@ -15,11 +15,6 @@ And then execute:
 $ bundle
 ```
 
-Or install it yourself as:
-```bash
-$ gem install active_intelligence
-```
-
 ## Usage
 
 ### 1. Configuration
