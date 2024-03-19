@@ -26,7 +26,7 @@ module ActiveIntelligence
       end
 
       def prompt_path(name)
-        path = self.name.underscore
+        path = self.name.pluralize.underscore
         path = [path, name].join('/') if name
         return prompt_directory.join("#{path}.erb")
       end

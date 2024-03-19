@@ -35,9 +35,9 @@ development:
 
 ### 2. app/prompts
 
-* Prompts live in `app/prompts`.  They are ERB files.
-* The default prompt per-model is named after the model, e.g. `app/prompts/user.erb`
-* Named prompts per-model live in a subdirectory named adter the model, e.g. `app/prompts/user/invite.erb`
+* Prompts live in `app/prompts`.  They are ERB files that use a model as binding.
+* The default prompt per-model is named after the model, e.g. `app/prompts/users.erb`
+* Named prompts per-model live in a subdirectory named adter the model, e.g. `app/prompts/users/invite.erb`
 
 ### 3. include ActiveIntelligence::Promptable
 

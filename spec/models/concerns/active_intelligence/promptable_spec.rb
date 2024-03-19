@@ -66,7 +66,7 @@ describe ActiveIntelligence::Promptable do
     context 'without a name' do
       subject { ActiveIntelligence::PromptableTest.prompt_path(nil) }
 
-      let(:expected) { Rails.root.join('app/prompts/active_intelligence/promptable_test.erb') }
+      let(:expected) { Rails.root.join('app/prompts/active_intelligence/promptable_tests.erb') }
 
       it('returns a path') { expect(subject).to eq(expected) }
     end
@@ -74,7 +74,7 @@ describe ActiveIntelligence::Promptable do
     context 'with a name' do
       subject { ActiveIntelligence::PromptableTest.prompt_path(:test) }
 
-      let(:expected) { Rails.root.join('app/prompts/active_intelligence/promptable_test/test.erb') }
+      let(:expected) { Rails.root.join('app/prompts/active_intelligence/promptable_tests/test.erb') }
 
       it('returns a path') { expect(subject).to eq(expected) }
     end
