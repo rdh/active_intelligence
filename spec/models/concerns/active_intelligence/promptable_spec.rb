@@ -4,7 +4,7 @@
 # Test Class
 
 module ActiveIntelligence
-  class PromptableTest
+  class TestPromptable
     include ActiveIntelligence::Promptable
 
     def initialize(name)
@@ -19,7 +19,7 @@ describe ActiveIntelligence::Promptable do
   # #to_prompt
 
   describe '#to_prompt' do
-    subject { ActiveIntelligence::PromptableTest.new(name).to_prompt(name) }
+    subject { ActiveIntelligence::TestPromptable.new(name).to_prompt(name) }
 
     context 'without a name' do
       let(:name) { nil }
@@ -40,7 +40,7 @@ describe ActiveIntelligence::Promptable do
   # .prompt_directory
 
   describe '.prompt_directory' do
-    subject { ActiveIntelligence::PromptableTest.prompt_directory }
+    subject { ActiveIntelligence::TestPromptable.prompt_directory }
 
     let(:expected) { Rails.root.join('app/prompts') }
 
@@ -51,9 +51,9 @@ describe ActiveIntelligence::Promptable do
   # .prompt_file
 
   describe '.prompt_file' do
-    subject { ActiveIntelligence::PromptableTest.prompt_file(nil) }
+    subject { ActiveIntelligence::TestPromptable.prompt_file(nil) }
 
-    let(:expected) { File.read(ActiveIntelligence::PromptableTest.prompt_path(nil)) }
+    let(:expected) { File.read(ActiveIntelligence::TestPromptable.prompt_path(nil)) }
 
     it('returns a string') { expect(subject).to eq(expected) }
   end
@@ -64,17 +64,17 @@ describe ActiveIntelligence::Promptable do
   describe '.prompt_path' do
 
     context 'without a name' do
-      subject { ActiveIntelligence::PromptableTest.prompt_path(nil) }
+      subject { ActiveIntelligence::TestPromptable.prompt_path(nil) }
 
-      let(:expected) { Rails.root.join('app/prompts/active_intelligence/promptable_tests.erb') }
+      let(:expected) { Rails.root.join('app/prompts/active_intelligence/test_promptables.erb') }
 
       it('returns a path') { expect(subject).to eq(expected) }
     end
 
     context 'with a name' do
-      subject { ActiveIntelligence::PromptableTest.prompt_path(:test) }
+      subject { ActiveIntelligence::TestPromptable.prompt_path(:test) }
 
-      let(:expected) { Rails.root.join('app/prompts/active_intelligence/promptable_tests/test.erb') }
+      let(:expected) { Rails.root.join('app/prompts/active_intelligence/test_promptables/test.erb') }
 
       it('returns a path') { expect(subject).to eq(expected) }
     end
