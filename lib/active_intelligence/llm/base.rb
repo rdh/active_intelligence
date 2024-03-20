@@ -2,7 +2,7 @@
 
 module ActiveIntelligence
   module LLM
-    class BaseLLM
+    class Base
 
       attr_reader :settings
 

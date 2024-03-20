@@ -8,7 +8,7 @@ describe ActiveIntelligence::LLM::Config do
   describe '.adapter' do
     subject { described_class.adapter }
 
-    let(:expected) { ActiveIntelligence::LLM::BaseLLM }
+    let(:expected) { ActiveIntelligence::LLM::Base }
 
     it('returns an adapter') { expect(subject).to be_a_kind_of(expected) }
 

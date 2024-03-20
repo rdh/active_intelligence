@@ -4,7 +4,7 @@ require 'openai'
 
 module ActiveIntelligence
   module LLM
-    class OpenAILLM < BaseLLM
+    class OpenAILLM < Base
 
       GLOBAL_SETTINGS = %i[
         adapter
@@ -17,7 +17,7 @@ module ActiveIntelligence
         @client ||= OpenAI::Client.new(@settings)
       end
 
-      def generate(prompt, options = {})
+      def generate(prompt, _options = {})
         parameters = settings.except(*GLOBAL_SETTINGS)
         parameters[:messages] = [{ role: 'user', content: prompt }]
 
