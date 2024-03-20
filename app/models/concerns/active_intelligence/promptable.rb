@@ -5,30 +5,20 @@ module ActiveIntelligence
     extend ActiveSupport::Concern
 
     included do
-      def to_prompt(name = nil)
-        template = self.class.prompt_file(name)
-        ERB.new(template).result(binding)
-      end
-
-      def from_llm(name = nil, llm = nil)
+      def from_llm(template = nil, llm = nil)
         llm ||= ActiveIntelligence::LLM::Config.adapter
-        return llm.generate(to_prompt(name))
-      end
-    end
-
-    class_methods do
-      def prompt_directory
-        Rails.root.join('app/prompts')
+        return llm.generate(to_prompt(template))
       end
 
-      def prompt_file(name)
-        File.read(prompt_path(name))
-      end
-
-      def prompt_path(name)
-        path = self.name.pluralize.underscore
+      def to_prompt(name = nil)
+        path = self.class.name.pluralize.underscore
         path = [path, name].join('/') if name
-        return prompt_directory.join("#{path}.erb")
+
+        lookup_context = ActionView::LookupContext.new([Rails.root.join('app/prompts')])
+        context = ActionView::Base.with_empty_template_cache.new(lookup_context, { self: self }, nil)
+        renderer = ActionView::Renderer.new(lookup_context)
+
+        return renderer.render(context, { template: path, formats: [:text], handlers: [:erb] })
       end
     end
   end
