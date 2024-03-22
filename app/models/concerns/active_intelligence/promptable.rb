@@ -11,14 +11,12 @@ module ActiveIntelligence
       end
 
       def to_prompt(name = nil)
-        path = self.class.name.pluralize.underscore
-        path = [path, name].join('/') if name
+        template = self.class.name.pluralize.underscore
+        template = [template, name].join('/') if name
 
-        lookup_context = ActionView::LookupContext.new([Rails.root.join('app/prompts')])
-        context = ActionView::Base.with_empty_template_cache.new(lookup_context, { self: self }, nil)
-        renderer = ActionView::Renderer.new(lookup_context)
-
-        return renderer.render(context, { template: path, formats: [:text], handlers: [:erb] })
+        assigns = { self: self }
+        prompt = ActiveIntelligence::LLM::Prompt.new(template, assigns)
+        return prompt.render
       end
     end
   end

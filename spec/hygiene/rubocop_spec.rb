@@ -4,6 +4,9 @@ describe 'Rubocop' do
   it('passes') { is_expected.to pass_rubocop }
 end
 
+###############################################################################
+# pass_rubocop Matcher
+
 RSpec::Matchers.define :pass_rubocop do
 
   description do

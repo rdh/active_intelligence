@@ -52,6 +52,11 @@ Rails/ReflectionClassName:
 #############################################################################
 # RSpec
 
+RSpec/DescribeClass:
+  Exclude:
+    - spec/hygiene/**/*
+    - spec/views/**/*
+
 RSpec/ExampleLength:
   Enabled: false
 
