@@ -249,6 +249,10 @@ GEM
       rubocop (~> 1.41)
     rubocop-factory_bot (2.25.1)
       rubocop (~> 1.41)
+    rubocop-inflector (0.2.1)
+      activesupport
+      rubocop
+      rubocop-rspec
     rubocop-rails (2.24.0)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
@@ -307,6 +311,7 @@ DEPENDENCIES
   puma
   rspec-rails
   rubocop
+  rubocop-inflector
   rubocop-rails
   rubocop-rspec
   shoulda-matchers (~> 6.0)

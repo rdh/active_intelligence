@@ -9,7 +9,7 @@ module ActiveIntelligence
 
         klass = [
           'ActiveIntelligence::LLM',
-          [settings[:adapter].to_s.camelize, 'LLM'].join
+          settings[:adapter].to_s.camelize
         ].join('::').constantize
         return klass.new(settings)
       end

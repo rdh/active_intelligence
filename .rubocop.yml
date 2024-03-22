@@ -60,6 +60,10 @@ RSpec/DescribeClass:
 RSpec/ExampleLength:
   Enabled: false
 
+RSpec/FilePath:
+  CustomTransform:
+    OpenAI: openai
+
 RSpec/MultipleExpectations:
   Enabled: false
 

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe ActiveIntelligence::LLM::OpenAILLM do
+describe ActiveIntelligence::LLM::OpenAI do
 
   it 'needs specs'
 end

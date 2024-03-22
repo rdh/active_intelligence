@@ -4,7 +4,7 @@ require 'openai'
 
 module ActiveIntelligence
   module LLM
-    class OpenAILLM < Base
+    class OpenAI < Base
 
       GLOBAL_SETTINGS = %i[
         adapter
@@ -14,7 +14,7 @@ module ActiveIntelligence
       ].freeze
 
       def client
-        @client ||= OpenAI::Client.new(@settings)
+        @client ||= ::OpenAI::Client.new(@settings)
       end
 
       def generate(prompt, _options = {})
