@@ -1,0 +1,9 @@
+development:
+  adapter: adapter
+
+test:
+  adapter: adapter
+  foo: bar
+
+bogus:
+  adapter: bogus

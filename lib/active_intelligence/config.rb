@@ -20,7 +20,7 @@ module ActiveIntelligence
     end
 
     def name
-      self.class.name.split('::')[1]
+      self.class.name.split('::')[1].force_encoding('UTF-8')
     end
 
     def path

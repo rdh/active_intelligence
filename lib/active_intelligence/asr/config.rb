@@ -3,7 +3,6 @@
 module ActiveIntelligence
   module ASR
     class Config < ActiveIntelligence::Config
-
     end
   end
 end

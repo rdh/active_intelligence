@@ -2,13 +2,7 @@
 
 module ActiveIntelligence
   module ASR
-    class Base
-
-      attr_reader :settings
-
-      def initialize(settings)
-        @settings = settings
-      end
+    class Base < ActiveIntelligence::Adapter
 
       def transcribe(file, options = {})
         raise NotImplementedError

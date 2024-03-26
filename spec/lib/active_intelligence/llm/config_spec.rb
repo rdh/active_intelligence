@@ -21,7 +21,7 @@ describe ActiveIntelligence::LLM::Config do
   describe '.path' do
     subject { described_class.path }
 
-    let(:expected) { Rails.root.join('config/llm.yml') }
+    let(:expected) { Rails.root.join('config/ai/llm.yml') }
 
     it('returns a path') { expect(subject).to eq(expected) }
   end
