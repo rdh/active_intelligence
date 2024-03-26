@@ -19,12 +19,12 @@ module ActiveIntelligence
       end
 
       def self.path
-        Rails.root.join('config/llm.yml')
+        Rails.root.join('config/ai/llm.yml')
       end
 
       def self.settings(key = Rails.env.to_sym)
         settings = yaml[key]
-        raise KeyError, "config/llm.yml: #{key}" unless settings
+        raise KeyError, "config/ai/llm.yml: #{key}" unless settings
 
         return settings
       end

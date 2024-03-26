@@ -1,0 +1,12 @@
+default: &default
+  adapter: openai
+  access_token: <%= ENV.fetch('OPENAI_ACCESS_TOKEN') %>
+  organization_id: <%= ENV.fetch('OPENAI_ORGANIZATION_ID')  %>
+  request_timeout: 300
+  model: whisper-1
+
+development:
+  <<: *default
+
+test:
+  <<: *default
