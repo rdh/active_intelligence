@@ -3,8 +3,8 @@
 require 'openai'
 
 module ActiveIntelligence
-  module LLM
-    class OpenAI < Base
+  module ASR
+    class OpenAIAdapter < Adapter
 
       GLOBAL_SETTINGS = %i[
         adapter

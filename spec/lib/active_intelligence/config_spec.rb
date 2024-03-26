@@ -3,7 +3,7 @@
 module ActiveIntelligence
   module Test
     class Config < ActiveIntelligence::Config; end
-    class Adapter < ActiveIntelligence::Adapter; end
+    class TestAdapter < ActiveIntelligence::Adapter; end
   end
 end
 
@@ -21,7 +21,7 @@ describe ActiveIntelligence::Config do
       let(:key) { :test }
 
       it 'returns an adapter' do
-        expect(subject).to be_a(ActiveIntelligence::Test::Adapter)
+        expect(subject).to be_a(ActiveIntelligence::Test::TestAdapter)
       end
     end
 
@@ -43,7 +43,7 @@ describe ActiveIntelligence::Config do
       let(:expected) { config.settings }
 
       it 'returns the default adapter' do
-        expect(subject).to be_a(ActiveIntelligence::Test::Adapter)
+        expect(subject).to be_a(ActiveIntelligence::Test::TestAdapter)
         expect(subject.settings).to eq(expected)
       end
     end
@@ -125,7 +125,7 @@ describe ActiveIntelligence::Config do
 
     it 'returns a hash' do
       expect(subject).to be_a(Hash)
-      expect(subject[:test][:adapter]).to eq('adapter')
+      expect(subject[:test][:adapter]).to eq('test')
     end
   end
 end

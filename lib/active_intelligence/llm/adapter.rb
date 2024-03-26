@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 module ActiveIntelligence
-  module ASR
-    class Base < ActiveIntelligence::Adapter
+  module LLM
+    class Adapter < ActiveIntelligence::Adapter
 
-      def transcribe(file, options = {})
+      def generate(prompt, options = {})
         raise NotImplementedError
       end
     end

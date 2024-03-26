@@ -9,7 +9,7 @@ module ActiveIntelligence
       klass = [
         'ActiveIntelligence',
         name,
-        settings[:adapter].to_s.camelize
+        [settings[:adapter].to_s.camelize, 'Adapter'].join
       ].join('::').constantize
 
       return klass.new(settings)

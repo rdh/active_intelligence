@@ -18,7 +18,7 @@ $ bundle
 ## Usage
 
 ### 1. Configuration
-Configure your LLM in `config/llm.yml`, something like:
+Configure your LLM in `config/ai/llm.yml`, something like:
 ```yaml
 openai: &openai
   adapter: openai

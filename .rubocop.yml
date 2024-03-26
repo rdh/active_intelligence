@@ -63,6 +63,7 @@ RSpec/ExampleLength:
 RSpec/FilePath:
   CustomTransform:
     OpenAI: openai
+    OpenAIAdapter: openai_adapter
 
 RSpec/MultipleExpectations:
   Enabled: false
