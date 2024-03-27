@@ -7,8 +7,9 @@ namespace :dotenv do
   desc 'Update all dotenv templates'
   task :template do
     %w[
-      spec/dummy
+      examples/asr
       examples/llm
+      spec/dummy
     ].each do |dir|
       Dir.chdir(dir) do
         system('dotenv -t .env')

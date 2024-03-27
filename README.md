@@ -15,7 +15,7 @@ And then execute:
 $ bundle
 ```
 
-## Usage
+## Basic Usage
 
 ### 1. Configuration
 Configure your LLM in `config/ai/llm.yml`, something like:
@@ -26,24 +26,32 @@ openai: &openai
   organization_id: <%= ENV.fetch('OPENAI_ORGANIZATION_ID')  %>
   request_timeout: 120
 
-
 development:
   <<: *openai
   model: gpt-4-32k
   temperature: 0.0
 ```
 
-### 2. app/prompts
+### 2. Use the LLM
+
+```ruby
+adapter = ActiveIntelligence::LLM::Config.new.adapter
+puts adapter.generate("Tell me a joke")
+```
+
+## ActiveRecord & ActionView Integration
+
+### 3. app/prompts
 
 * Prompts live in `app/prompts`.  They are ERB files that use a model as binding.
 * The default prompt per-model is named after the model, e.g. `app/prompts/users.erb`
 * Named prompts per-model live in a subdirectory named adter the model, e.g. `app/prompts/users/invite.erb`
 
-### 3. include ActiveIntelligence::Promptable
+### 4. include ActiveIntelligence::Promptable
 
 Add `include ActiveIntelligence::Promptable` to your model, which adds the `#to_prompt` and `#from_llm` methods.
 
-### 4.  Call `#from_llm` to generate a response
+### 5.  Call `#from_llm` to generate a response
 
 ```ruby
 default_response = user.from_llm 
