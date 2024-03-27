@@ -1,0 +1,980 @@
+1
+00:00:00,120 --> 00:00:07,290
+Hello and welcome to this series on physics and philosophy from the University of Oxford Artificial Intelligence.
+
+2
+00:00:07,950 --> 00:00:14,010
+The term conjures up apocalyptic visions of armies of robots taking over the world and enslaving the human race.
+
+3
+00:00:14,970 --> 00:00:18,360
+Technology today is indeed progressing at an ever growing rate.
+
+4
+00:00:19,080 --> 00:00:24,240
+A pocket calculator can solve problems in a matter of seconds that a human would take much longer today.
+
+5
+00:00:25,260 --> 00:00:29,190
+Many of our mundane and repetitive jobs are now being taken care of by machines.
+
+6
+00:00:29,760 --> 00:00:35,790
+But could a computer ever truly replace a human? Could it enjoy the Northern Lights or fall in love and write a poem?
+
+7
+00:00:36,960 --> 00:00:45,570
+I'm on guitar and Evan and I'm speaking to Sir Roger Penrose, emeritus professor of mathematics and fellow of Wadham College, Oxford.
+
+8
+00:00:46,470 --> 00:00:53,070
+Although a mathematician at heart, he has made extensive contributions in the fields of physics, philosophy and even art.
+
+9
+00:00:53,880 --> 00:01:00,240
+He is the recipient of many awards and prizes, including the 1988 Woolf prize for his work in Black Holes.
+
+10
+00:01:01,230 --> 00:01:05,040
+His book, The Emperor's New Mind and its sequel, Shadows of the Mind,
+
+11
+00:01:05,370 --> 00:01:11,760
+explored the idea of artificial intelligence and whether the human mind could ever be fully replicated by a computer.
+
+12
+00:01:12,780 --> 00:01:16,500
+So do you think that the human mind can ever be replicated by a computer?
+
+13
+00:01:17,340 --> 00:01:21,090
+I don't, actually. But we have to be careful about the terminology.
+
+14
+00:01:21,420 --> 00:01:29,160
+I mean, I think that the conscious aspects of the human mind I mean, mind you may include unconscious activities also,
+
+15
+00:01:29,610 --> 00:01:34,650
+but what's involved in consciousness is not to do with computation,
+
+16
+00:01:35,430 --> 00:01:40,440
+and that no matter how complicated the computation is, it would not evoke consciousness,
+
+17
+00:01:40,440 --> 00:01:45,630
+nor would it be able to do the things that I believe consciousness actually is used for.
+
+18
+00:01:45,960 --> 00:01:49,440
+So I think of consciousness is something which actually does affect our behaviour.
+
+19
+00:01:49,950 --> 00:01:54,670
+Some people refer to an epi phenomenon, which means that it just happens to tag along.
+
+20
+00:01:54,690 --> 00:02:03,520
+If you have a computational action, for example, or some kind of action and consciousness sort of comes along as a passenger, I don't take that view.
+
+21
+00:02:03,540 --> 00:02:10,530
+It's a more active role that it plays. I'm not quite sure I could define that in any way that would make a philosopher happy.
+
+22
+00:02:11,160 --> 00:02:16,320
+But nevertheless, I do think it's an active role and it's serving a purpose.
+
+23
+00:02:17,310 --> 00:02:28,290
+So that's the evolution of consciousness in in us and in other animals is in my, in my view, something which had a strong selective advantage.
+
+24
+00:02:29,040 --> 00:02:34,650
+So that's why we have it, if you like. But that is not something that a computer does.
+
+25
+00:02:35,460 --> 00:02:42,180
+And the reasons I have believing this mainly come from mathematical logic.
+
+26
+00:02:43,350 --> 00:02:47,460
+So although there's arguments which I've been trying to make for a long time,
+
+27
+00:02:48,210 --> 00:02:55,710
+first in the Emperor's New Mind and more in more detail in my later book, Shadows of the Mind.
+
+28
+00:02:56,250 --> 00:03:03,360
+But in many other writings, I have tried to make the case that I think it's actually a strong case,
+
+29
+00:03:04,050 --> 00:03:13,050
+that there is something quite different that we use our consciousness for, which is not something that could be actually done by a computer as such.
+
+30
+00:03:14,480 --> 00:03:23,900
+To clarify that a little bit. I don't necessarily mean that some device made by some mad scientist or a same scientist,
+
+31
+00:03:24,380 --> 00:03:33,200
+some latter day Frankenstein say who could construct some entity out of maybe inanimate materials,
+
+32
+00:03:33,800 --> 00:03:40,670
+which might conceivably be conscious, but it would not be a computer in the sense that we use that word today.
+
+33
+00:03:41,790 --> 00:03:46,710
+So what exactly would the difference be? What is it about a computer that it cannot have consciousness?
+
+34
+00:03:47,340 --> 00:03:54,450
+Well, this is the centenary year of Alan Turing, so it's nice to be able to relate this discussion to Turing's work.
+
+35
+00:03:55,260 --> 00:03:55,559
+You see,
+
+36
+00:03:55,560 --> 00:04:08,160
+Turing in the 1930s put forward a very interesting concept which was basically making clear what a lot of other logicians were doing at the time,
+
+37
+00:04:09,150 --> 00:04:16,920
+which was what is a computation. There were some mathematical problems or classes of problems which had been proposed as you can.
+
+38
+00:04:16,920 --> 00:04:19,740
+You find an automatic way of solving all these problems.
+
+39
+00:04:20,490 --> 00:04:27,960
+And in order to address that question, Turing had to make clear what it meant to say an automatic process.
+
+40
+00:04:28,860 --> 00:04:37,230
+And he also showed that there are mathematical problems which lie outside the scope of any automatic process.
+
+41
+00:04:38,010 --> 00:04:45,870
+This was part of his initial thesis. This was more or less known already to gerdau and famous logician.
+
+42
+00:04:46,710 --> 00:04:50,580
+But I think, as Goodall himself appreciated,
+
+43
+00:04:50,610 --> 00:04:58,260
+Turing's way of looking at it made it much clearer that his way was actually encompassing what you really mean by computation.
+
+44
+00:04:58,800 --> 00:05:02,340
+Now, the idea is that a computation is something which needs no means to do it.
+
+45
+00:05:02,970 --> 00:05:06,570
+It just goes on automatically. It has rules which it follows.
+
+46
+00:05:06,900 --> 00:05:16,080
+And these rules are made very clear. And we they are the basis of what we now understand by a general purpose computer.
+
+47
+00:05:16,920 --> 00:05:24,300
+So a Turing machine, the notion that Turing introduced in whenever it was 1935 or something, the idea.
+
+48
+00:05:25,220 --> 00:05:34,370
+Is basically what we now understand by a general purpose computer or an ordinary or a laptop idealised in basically three ways.
+
+49
+00:05:34,580 --> 00:05:40,309
+One is it has unlimited storage space, so it can keep on you can keep on adding memory, if you like,
+
+50
+00:05:40,310 --> 00:05:48,470
+and unlimited storage space that it can go on indefinitely without ever wearing out and that it never makes mistakes.
+
+51
+00:05:49,280 --> 00:05:50,990
+So it's idealised in those ways.
+
+52
+00:05:51,830 --> 00:05:57,920
+But when you've idealised it in those ways, you could actually see the limitations as Turing himself was very clear about.
+
+53
+00:05:59,000 --> 00:06:05,420
+So initially, he he, I believe, tried to explore how you might go beyond his ideas.
+
+54
+00:06:06,230 --> 00:06:16,190
+I think that perhaps his his experiences at Bletchley Park with decoding and realising the power of electronic computers.
+
+55
+00:06:16,580 --> 00:06:25,430
+He shifted his view and went around to the view that maybe we are just computers in some very sophisticated code.
+
+56
+00:06:26,270 --> 00:06:34,370
+But I would dispute that. Let me paraphrase Girls Famous Incompleteness Theorem in a slightly different way.
+
+57
+00:06:34,380 --> 00:06:42,690
+This is more the Turing way. Suppose you're trying to prove certain statements in mathematics.
+
+58
+00:06:43,200 --> 00:06:47,430
+Now, these are statements which have to do with in the infinite in some way.
+
+59
+00:06:47,460 --> 00:06:51,150
+They always have to do with the infinite. You might say, how can we know about the infinite?
+
+60
+00:06:51,240 --> 00:06:58,320
+Well, let me give you a statement, which I think you would agree is pretty obviously true, even though it talks about the infinite.
+
+61
+00:06:59,640 --> 00:07:03,180
+If you add two even numbers together, you always get another even number.
+
+62
+00:07:03,360 --> 00:07:07,860
+You never get an odd number. There is no odd number, which is the sum of two even numbers.
+
+63
+00:07:08,280 --> 00:07:12,960
+Now that's a statement about all numbers, no matter how absolutely, fantastically enormous they might be.
+
+64
+00:07:13,500 --> 00:07:16,980
+And yet we can perceive for various reasons why that's true.
+
+65
+00:07:17,580 --> 00:07:20,700
+If you add even numbers together, you get another even number. Okay.
+
+66
+00:07:20,700 --> 00:07:22,770
+There are much more sophisticated statements like that.
+
+67
+00:07:23,010 --> 00:07:27,990
+Like the famous Fermat's Last Theorem, which is another example of something of a similar character.
+
+68
+00:07:28,860 --> 00:07:31,950
+Now let's just take simple statements.
+
+69
+00:07:32,520 --> 00:07:36,000
+When I say this simple, that may be very difficult to prove that statements like that,
+
+70
+00:07:36,660 --> 00:07:40,590
+which are to do with natural numbers, the numbers zero one, two, three, four, etc.
+
+71
+00:07:40,920 --> 00:07:44,940
+So we know what we're talking about. They're not some highfalutin concept.
+
+72
+00:07:45,840 --> 00:07:51,810
+But the statements about these numbers, such as the still unproved goldbach conjecture,
+
+73
+00:07:52,620 --> 00:07:58,260
+every even number greater than two is the sum of two prime numbers.
+
+74
+00:07:58,380 --> 00:08:03,270
+So if you know the prime numbers, it's a fairly clear statement. Nobody knows whether that's true or not.
+
+75
+00:08:03,690 --> 00:08:07,680
+It's just people suspect it is true. But there is no known proof.
+
+76
+00:08:08,550 --> 00:08:12,510
+Okay. Now, how would you expect to be able to prove statements like this?
+
+77
+00:08:12,990 --> 00:08:22,560
+Well, you might have some kind of system rules, axioms, rules of procedure, which if you follow them properly, you come up with yes or no.
+
+78
+00:08:23,920 --> 00:08:31,720
+Now the key point about these rules is that they are computationally checkable so that if I produce.
+
+79
+00:08:33,120 --> 00:08:38,340
+An alleged proof. I can put this on the machine and it says, Yup, you've done the rules right?
+
+80
+00:08:39,120 --> 00:08:43,590
+Or You made a mistake there. So that's what I mean by computationally checkable.
+
+81
+00:08:43,860 --> 00:08:47,519
+Okay. So you can put that on the computer. I don't say that it knows what it's doing.
+
+82
+00:08:47,520 --> 00:08:51,750
+It just can check whether or not the rules have been correctly followed.
+
+83
+00:08:52,860 --> 00:08:56,850
+Now, here is the girl Turing statement. This is Turing's version of girl statement.
+
+84
+00:08:57,780 --> 00:09:01,290
+Whatever those rules are, let's call them a capital R.
+
+85
+00:09:01,290 --> 00:09:11,719
+So when these rules rules are the rules. If I know what they are, I can construct a statement of the kind that I'm talking about.
+
+86
+00:09:11,720 --> 00:09:18,800
+Right. Some of the prime numbers and so on. I can construct a statement which has the following two properties.
+
+87
+00:09:19,700 --> 00:09:29,150
+First of all, it's true, provided the rules do not enable me to prove that two equals three.
+
+88
+00:09:30,200 --> 00:09:40,280
+If I trust the rules to the extent that I know they will never enable me to prove two equals three, then this other statement is certainly true.
+
+89
+00:09:41,760 --> 00:09:45,780
+Yet that other statement cannot be proved using the rules.
+
+90
+00:09:47,470 --> 00:09:51,910
+So our understanding inside can.
+
+91
+00:09:53,180 --> 00:09:58,070
+Supersede or transcend any system of rules whatsoever.
+
+92
+00:09:58,250 --> 00:10:02,720
+If you give me a system of rules which are meant to be the way mathematicians prove these statements,
+
+93
+00:10:03,350 --> 00:10:10,940
+I can go away and construct in a very clear cut way a statement which I can show is beyond the scope of the rules.
+
+94
+00:10:11,330 --> 00:10:18,960
+Yet it's still true. And the key point is knowing that it's true comes from my trust in the rules.
+
+95
+00:10:19,530 --> 00:10:23,730
+So it's my very trust in the rules which enables me to transcend the rules.
+
+96
+00:10:24,510 --> 00:10:29,010
+Now, that's very remarkable statement. It shows that we don't work by rules.
+
+97
+00:10:29,760 --> 00:10:36,120
+Okay. There are various objections you might make to say, well, we don't know what we are, we don't know what calculations we do and so on.
+
+98
+00:10:36,780 --> 00:10:40,620
+I don't believe any of those objections really get to the point.
+
+99
+00:10:41,190 --> 00:10:46,500
+Turing's answer. He knew perfectly well that statement. Turing's answer was, Well, human beings make mistakes.
+
+100
+00:10:46,830 --> 00:10:54,240
+And that's where our superiority lies. Okay, maybe that I really don't think that is what makes us superior to computers.
+
+101
+00:10:55,080 --> 00:11:00,660
+You can make computers, make mistakes. It's easy to see. So I don't believe that that's.
+
+102
+00:11:02,090 --> 00:11:08,840
+Why? We can do certain things that computers can't, and we do them because we understand what we're doing.
+
+103
+00:11:09,960 --> 00:11:16,770
+Now, I don't know what understanding really is, but whatever it is, it's something which computers don't have.
+
+104
+00:11:17,840 --> 00:11:20,959
+When we use computers and we do it also, we can make them play chess.
+
+105
+00:11:20,960 --> 00:11:24,950
+We can make them do calculations to do wonderful simulations in science and so on.
+
+106
+00:11:25,550 --> 00:11:29,910
+But the computer doesn't know what it's doing. It doesn't know it churns out an answer.
+
+107
+00:11:29,930 --> 00:11:38,030
+It may say yes or no. It may say it takes note, but it hasn't the faintest idea what it's doing.
+
+108
+00:11:38,570 --> 00:11:40,790
+It doesn't understand what it's doing.
+
+109
+00:11:41,210 --> 00:11:49,490
+It's the understanding that enables us to transcend the rules if we understand the rules enough to believe them.
+
+110
+00:11:50,210 --> 00:11:54,080
+That same trust in the rules enables us to transcend the rules.
+
+111
+00:11:54,680 --> 00:11:58,639
+Now, that's very clear. But God approved.
+
+112
+00:11:58,640 --> 00:12:02,630
+And Turing's version, he said, is in terms of computation, it's the same girls there.
+
+113
+00:12:03,050 --> 00:12:07,340
+I could even prove it to you. It's not that hard to prove this statement.
+
+114
+00:12:08,340 --> 00:12:11,780
+It's a little bit contorted how you do it. It's not that hard to prove.
+
+115
+00:12:14,690 --> 00:12:17,989
+Now, when I learned about this, not quite in the form.
+
+116
+00:12:17,990 --> 00:12:21,530
+I've said it here when I was a graduate student at Cambridge.
+
+117
+00:12:22,070 --> 00:12:25,900
+Before that, I probably would have believed that we were all computers in some form.
+
+118
+00:12:25,910 --> 00:12:29,810
+You see, I was, you know, I was that much of a materialist, if you like to use that word.
+
+119
+00:12:30,320 --> 00:12:34,879
+But after hearing about the Gardner Theorem, after hearing this from a logician,
+
+120
+00:12:34,880 --> 00:12:39,910
+a lecturer we had in Cambridge, it seemed clear to me, okay, there's something else going on in our heads.
+
+121
+00:12:40,750 --> 00:12:45,040
+And I do believe that something in our heads, it's not something which comes mystically from outside.
+
+122
+00:12:45,130 --> 00:12:52,450
+I mean, some people might think that no, I believe it's something to do with the goings on inside our heads, which is not computational.
+
+123
+00:12:53,870 --> 00:13:03,660
+Now. I had believed this for many decades, but when it came to, I had the idea that someday I would write a book for the general public.
+
+124
+00:13:03,700 --> 00:13:07,429
+You see, I just had this ambition. Maybe long after I'm retired.
+
+125
+00:13:07,430 --> 00:13:19,790
+I will have time to do this, you see. But I heard a radio talk where Marvin Minsky, who is a very strong person, he believes we're all computers and.
+
+126
+00:13:19,790 --> 00:13:23,210
+And Edward Fradkin was another of the same beliefs.
+
+127
+00:13:23,600 --> 00:13:26,720
+And they were arguing things which seem to me to be quite extreme.
+
+128
+00:13:27,260 --> 00:13:30,020
+Like if you walk from one end of the room, the other end of the room,
+
+129
+00:13:30,260 --> 00:13:35,330
+there are two computers communicating with each other in the time you walk from one end of the room to the other.
+
+130
+00:13:35,480 --> 00:13:41,420
+They have communicated more things to each other than the human race has ever done in its whole existence.
+
+131
+00:13:41,720 --> 00:13:49,430
+You see. So I said, Well, I see where you're coming from. If you take the view that what we do is computations.
+
+132
+00:13:49,970 --> 00:13:54,770
+Yeah, I suppose I could see your logic. I don't believe it, because I don't think that's what we do.
+
+133
+00:13:55,220 --> 00:13:58,970
+I think understanding is something which is not a computational process.
+
+134
+00:13:59,360 --> 00:14:03,830
+And that's what makes us different from computers. Yes. Well, there are lots of things that make us different.
+
+135
+00:14:03,980 --> 00:14:08,750
+I think, you know, feelings, emotions and artist appreciation.
+
+136
+00:14:08,870 --> 00:14:12,800
+But I'm only concentrating on this one quality, which is understanding.
+
+137
+00:14:13,370 --> 00:14:19,130
+And there I think you can make a good case that what we do is not computational.
+
+138
+00:14:19,940 --> 00:14:23,510
+So do you think that science can fully understand the mind?
+
+139
+00:14:24,200 --> 00:14:28,460
+I think it's possible. Now, you see, here's where it's much more speculative.
+
+140
+00:14:28,520 --> 00:14:34,670
+I think the girl statement, despite the fact that many people argue with me and you be surprised how many rude things they say.
+
+141
+00:14:34,970 --> 00:14:39,560
+But it seems to me the argument when presented clearly is absolutely clear.
+
+142
+00:14:40,550 --> 00:14:43,940
+Okay. They say, well, we don't know what algorithm we follow in our heads.
+
+143
+00:14:43,940 --> 00:14:47,330
+And all this is some very complicated algorithm which gets to mathematics.
+
+144
+00:14:48,410 --> 00:14:52,219
+I find that completely incredible because you have to say, how did we come about?
+
+145
+00:14:52,220 --> 00:14:56,720
+Well, natural selection. Natural selection didn't favour people who are doing sophisticated mathematics.
+
+146
+00:14:57,380 --> 00:15:01,190
+It's quite other things. It favoured understanding. It favoured consciousness.
+
+147
+00:15:01,950 --> 00:15:05,630
+Consciousness, in my view, is a crucial ingredient to understanding.
+
+148
+00:15:05,810 --> 00:15:10,790
+But if you ask me, do I think science will ever come to grips with that question,
+
+149
+00:15:10,790 --> 00:15:15,920
+I think quite possibly whether we would properly completely come to grips with it, I don't know.
+
+150
+00:15:16,370 --> 00:15:22,010
+But I think we shall make progress on that. But I think that the progress will come.
+
+151
+00:15:23,070 --> 00:15:31,770
+From trying to understand what in physics there could be which lies outside computation.
+
+152
+00:15:32,580 --> 00:15:36,899
+Now, this is where I get you know, people have trouble agreeing with me.
+
+153
+00:15:36,900 --> 00:15:41,190
+Sometimes they say, well, we know all about physics, enough about the hand of the brain,
+
+154
+00:15:41,190 --> 00:15:47,010
+where we know all the equations and Newton and Einstein and Schrodinger and so on, and these equations.
+
+155
+00:15:47,250 --> 00:15:51,719
+Okay, we don't know the full details, but there are things we could put on a computer,
+
+156
+00:15:51,720 --> 00:15:58,740
+we could make a computer and maybe a bigger one than we have now and fit all the equations in and make it so we just compute it.
+
+157
+00:15:58,740 --> 00:16:02,010
+Help me. So I say, Well, it's true.
+
+158
+00:16:02,820 --> 00:16:08,470
+Although there are little problems here, there are little problems which I'm going to say are not probably the important one.
+
+159
+00:16:08,490 --> 00:16:13,970
+One of them is. The very notion of computation depends on the sweetness.
+
+160
+00:16:14,000 --> 00:16:21,290
+You have bits which can be this way or that way, whereas almost all the equations of physics we know about are continuous.
+
+161
+00:16:21,290 --> 00:16:26,810
+They depend on continuous parameters. Newton. Still true, Einstein, still true.
+
+162
+00:16:27,110 --> 00:16:32,060
+Schrödinger, Maxwell. All those equations depend on continuous functions.
+
+163
+00:16:32,630 --> 00:16:36,170
+I'm saying, okay, that's true. But maybe that's not really the point.
+
+164
+00:16:37,010 --> 00:16:39,530
+It could be. But I do not believe it.
+
+165
+00:16:39,650 --> 00:16:46,700
+I think that you can simulate with discreet ness close enough to the continuous that probably that's not the answer.
+
+166
+00:16:47,750 --> 00:16:50,180
+Is there anything else we don't know in physics? Yes.
+
+167
+00:16:50,850 --> 00:16:57,110
+There's this also, when I was a graduate student at Cambridge doing something quite different from my real research at that time,
+
+168
+00:16:58,160 --> 00:17:06,050
+I learned from Dirac about quantum mechanics. The Great Quantum mechanics physicist, and it stayed with me.
+
+169
+00:17:06,080 --> 00:17:11,570
+There's a big paradox in quantum mechanics. It involves two completely different procedures.
+
+170
+00:17:12,560 --> 00:17:17,150
+Let's call one the Schrödinger equation, which it is. I use the letter U for that.
+
+171
+00:17:17,150 --> 00:17:22,580
+That's unitary evolution. That's the word they used. And the other is what you do when you make a measurement.
+
+172
+00:17:23,240 --> 00:17:24,980
+And then you have to do something quite different,
+
+173
+00:17:25,370 --> 00:17:29,810
+which is called the collapse of the wave function or the reduction of the state vector for reduction.
+
+174
+00:17:29,990 --> 00:17:36,980
+So you and A of the two processes, if you look at them carefully, they're strictly speaking mutually inconsistent.
+
+175
+00:17:37,790 --> 00:17:41,060
+If the world works according to you, you can't have any. Ah.
+
+176
+00:17:42,260 --> 00:17:46,460
+You do how? To me, that says the equations are right.
+
+177
+00:17:47,160 --> 00:17:50,600
+Okay. They're very, very good, but they're not quite right.
+
+178
+00:17:50,930 --> 00:17:56,090
+And when they apply to big enough structures, there's something new comes in.
+
+179
+00:17:56,960 --> 00:18:01,810
+And Schrödinger himself was very clear when he made it. He talked about his cat.
+
+180
+00:18:02,290 --> 00:18:05,710
+You know, he said, well, I could I won't do it because I'm a nice, humane person.
+
+181
+00:18:05,950 --> 00:18:10,720
+But I could have an experiment in which a cat is put in a superposition of being alive and dead.
+
+182
+00:18:11,470 --> 00:18:14,170
+And that's absurd. I mean, he didn't quite put it like that.
+
+183
+00:18:14,410 --> 00:18:23,140
+But basically what he was saying is my equation when I say I'm shooting and you see Schrodinger's equation doesn't explain what happens to cats.
+
+184
+00:18:23,920 --> 00:18:27,490
+There's something missing. And I agree there is something missing.
+
+185
+00:18:28,240 --> 00:18:34,150
+And it's that missing thing which has to be involved in our mental processes, in consciousness.
+
+186
+00:18:34,990 --> 00:18:38,440
+It's not just that quantum mechanics is involved in brain action.
+
+187
+00:18:39,100 --> 00:18:45,860
+It's the missing. Boundary between quantum and classical mechanics, which we don't understand.
+
+188
+00:18:46,770 --> 00:18:54,820
+And when we have that, we might see that it's a non computational process and maybe we can see how it works in the brain.
+
+189
+00:18:54,840 --> 00:18:59,290
+Maybe we can see what relates to our feelings and other things about consciousness.
+
+190
+00:18:59,310 --> 00:19:04,890
+So I think it's possible we will make genuine progress. I think we're enormously far from it right now.
+
+191
+00:19:05,640 --> 00:19:10,170
+In your second book, Shadows of the Mind, you talk about microtubules in the brain.
+
+192
+00:19:10,680 --> 00:19:18,130
+Do you think that any new physics, perhaps not computational new physics, might play a role in microtubules and how these work?
+
+193
+00:19:18,150 --> 00:19:22,260
+And do you think research in this field may take a little closer to understanding consciousness?
+
+194
+00:19:23,300 --> 00:19:29,000
+I don't know what this new physics is that will go beyond colour codes, but I do make a guess.
+
+195
+00:19:29,690 --> 00:19:34,610
+When I wrote The Emperor's New Mind, I couldn't think of any place for this new physics to play a role.
+
+196
+00:19:35,330 --> 00:19:39,680
+I wrote my book anyway, thinking that by the time I'd written it I would see what the answer was.
+
+197
+00:19:39,710 --> 00:19:46,940
+No, I didn't. However, I was expecting young people maybe to be stimulated by my book.
+
+198
+00:19:46,940 --> 00:19:50,270
+I'm not sure how many were, but occasionally a scientist would be.
+
+199
+00:19:50,990 --> 00:19:54,580
+And Stewart Hamer of. I had never heard of him before.
+
+200
+00:19:55,300 --> 00:20:04,900
+Told me he wrote me a letter. They used to write letters in those days in which he pointed out that there was something evidently he didn't know,
+
+201
+00:20:05,110 --> 00:20:11,150
+namely microtubules these as little tubes, which in and also in almost all cells, not quite.
+
+202
+00:20:12,130 --> 00:20:18,870
+They have a special role to play in neurones, he says, and he knows about them because he puts people to sleep.
+
+203
+00:20:18,880 --> 00:20:20,140
+He's an anaesthesiologist.
+
+204
+00:20:20,860 --> 00:20:27,130
+But unlike many of his colleagues who just put people to sleep and wake them up again, he's interested in what he's actually doing.
+
+205
+00:20:27,880 --> 00:20:30,190
+What is he doing to the brain when he puts it to sleep?
+
+206
+00:20:30,670 --> 00:20:38,620
+So he wants to know what qualities of the brain, what structures in the brain do the general anaesthetics actually affect?
+
+207
+00:20:38,830 --> 00:20:46,030
+And he comes up with a view that the microtubules neurone or microtubules, which have a different kind of organisation from other cells.
+
+208
+00:20:47,000 --> 00:20:50,840
+And I was most impressed by this. I'd never heard of them stupidly.
+
+209
+00:20:51,620 --> 00:21:02,240
+And it seemed to be, well, here's a chance. There are structures with great deal, almost crystalline structure, highly organised tubes.
+
+210
+00:21:03,080 --> 00:21:08,190
+I thought there's a much better chance than the neurone propagation which gets lost in the environment.
+
+211
+00:21:08,190 --> 00:21:17,420
+That's hopeless. The microtubules, maybe. Now, this has been in a maybe state for a long time, but only within the last couple of years.
+
+212
+00:21:18,260 --> 00:21:24,260
+An Indian scientist who shares your name and your Ben Bandyopadhyay,
+
+213
+00:21:25,010 --> 00:21:33,080
+who has worked in Japan for many years with some Japanese colleagues, has been doing experiments on live microtubules.
+
+214
+00:21:33,350 --> 00:21:38,510
+These are actually pig brained microtubules. I don't think it's some problem they have getting human ones.
+
+215
+00:21:38,820 --> 00:21:42,020
+But anyway, pig brain microtubules and.
+
+216
+00:21:42,990 --> 00:21:47,250
+He has exhibited some very remarkable quantum properties.
+
+217
+00:21:48,420 --> 00:21:53,850
+So they have very strange properties, high conductivity at very specific frequencies.
+
+218
+00:21:54,330 --> 00:22:00,360
+You measure the resistance with a certain frequency input and suddenly they become very conductive.
+
+219
+00:22:00,840 --> 00:22:09,690
+And there are different frequencies. There are about eight different channels or frequencies, all working together in some complicated way.
+
+220
+00:22:10,650 --> 00:22:14,010
+But he argues that this has to be a quantum mechanical process.
+
+221
+00:22:14,490 --> 00:22:17,880
+You can't understand this from purely classical ideas.
+
+222
+00:22:18,630 --> 00:22:25,200
+This is the beginning of some research, but it's a new area which I think could be extremely exciting.
+
+223
+00:22:25,500 --> 00:22:35,490
+And maybe tell us something very important about what's going on in brain activity, which could be related to what's really going on in consciousness.
+
+224
+00:22:35,970 --> 00:22:41,580
+And is this non computational that's very hard to tell at this stage.
+
+225
+00:22:42,210 --> 00:22:52,590
+We would only be looking for coherent quantum effects in order for there to be any chance for the new physics that I claim is there to come in.
+
+226
+00:22:53,070 --> 00:22:56,550
+You need many, many microtubules actually acting in concert.
+
+227
+00:22:56,700 --> 00:23:03,120
+There's not enough displacement of mass. So the criterion that, as I say, this is a done deal.
+
+228
+00:23:03,210 --> 00:23:11,550
+She and I have independently put forward a proposal that if you have enough displacement of mass between two states,
+
+229
+00:23:12,000 --> 00:23:16,829
+then that gives you a lifetime for how long that superposition can live.
+
+230
+00:23:16,830 --> 00:23:20,879
+So if you have a superposition, two states, you can work out a lifetime.
+
+231
+00:23:20,880 --> 00:23:28,170
+It can't last for longer than, so it becomes one or the other. Now that lifetime for a single microtubule will be enormously long.
+
+232
+00:23:29,070 --> 00:23:32,820
+So that can't be in itself. What gives consciousness?
+
+233
+00:23:33,180 --> 00:23:38,040
+Because you aim conscious actions occur in matters of fractions of a second.
+
+234
+00:23:38,640 --> 00:23:45,150
+So one is looking for many microtubules acting together in some coherent process.
+
+235
+00:23:45,780 --> 00:23:48,330
+So you would need lots of them acting together. But it's a beginning.
+
+236
+00:23:49,020 --> 00:23:53,340
+You can't tell from just that experiment that there's anything non computational going on.
+
+237
+00:23:53,550 --> 00:24:03,990
+It's not even at the level where the new physics would come in is at a level where quantum physics seems to be playing a role at a level where people
+
+238
+00:24:03,990 --> 00:24:08,129
+thought couldn't happen because the temperature is too high and you need low
+
+239
+00:24:08,130 --> 00:24:12,390
+temperature or isolation or both in order to get coherent quantum effects.
+
+240
+00:24:12,720 --> 00:24:16,740
+And he seems to be seeing coherent quantum effects at high temperatures.
+
+241
+00:24:17,070 --> 00:24:22,740
+Body temperature higher than body temperature. And there's a good step.
+
+242
+00:24:22,980 --> 00:24:28,170
+A beginning. It's only a beginning. You need lots of microtubules coherently.
+
+243
+00:24:28,170 --> 00:24:32,930
+You need to understand about the structure of the brain. You need to understand all sorts of things.
+
+244
+00:24:32,940 --> 00:24:38,280
+It's a huge story, I'm sure, but at least it's a perhaps a little window into what's going on.
+
+245
+00:24:38,610 --> 00:24:39,780
+Yes. Thank you very much.
+

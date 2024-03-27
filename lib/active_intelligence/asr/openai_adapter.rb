@@ -8,7 +8,11 @@ module ActiveIntelligence
       include ActiveIntelligence::Concerns::OpenAI
 
       def transcribe(file, options = {})
-        raise NotImplementedError
+        parameters = default_parameters.merge(options)
+        parameters[:file] = File.open(file, 'rb')
+
+        response = client.audio.transcribe(parameters:)
+        return response['text']
       end
     end
   end
