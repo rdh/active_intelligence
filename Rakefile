@@ -9,4 +9,5 @@ load 'rails/tasks/statistics.rake'
 
 require 'bundler/gem_tasks'
 
+load 'spec/dummy/lib/tasks/dotenv.rake'
 load 'spec/dummy/lib/tasks/rubocop.rake'

@@ -14,6 +14,8 @@ AllCops:
     - config/initializers/**/*
     - config/locales/*
     - db/**/*
+    - examples/llm/bin/**/*
+    - examples/llm/config/**/*
     - log/**/*
     - node_modules/**/*
     - tmp/**/*
