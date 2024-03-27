@@ -1,4 +1,12 @@
-default: &default
+aws: &aws
+  adapter: aws
+  access_key_id: <%= ENV.fetch('AWS_ACCESS_KEY_ID') %>
+  secret_access_key: <%= ENV.fetch('AWS_SECRET_ACCESS_KEY') %>
+  region: us-east-1
+  bucket: ai.masterclass.dev
+  folder: transcribe
+
+openai: &openai
   adapter: openai
   access_token: <%= ENV.fetch('OPENAI_ACCESS_TOKEN') %>
   organization_id: <%= ENV.fetch('OPENAI_ORGANIZATION_ID')  %>
@@ -6,7 +14,7 @@ default: &default
   model: whisper-1
 
 development:
-  <<: *default
+  <<: *openai
 
 test:
-  <<: *default
+  <<: *openai
