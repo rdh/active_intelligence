@@ -5,20 +5,10 @@ require 'openai'
 module ActiveIntelligence
   module LLM
     class OpenAIAdapter < Adapter
-
-      GLOBAL_SETTINGS = %i[
-        adapter
-        access_token
-        organization_id
-        request_timeout
-      ].freeze
-
-      def client
-        @client ||= ::OpenAI::Client.new(@settings)
-      end
+      include ActiveIntelligence::Concerns::OpenAI
 
       def generate(prompt, _options = {})
-        parameters = settings.except(*GLOBAL_SETTINGS)
+        parameters = default_parameters
         parameters[:messages] = [{ role: 'user', content: prompt }]
 
         response = client.chat(parameters:)

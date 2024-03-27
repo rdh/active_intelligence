@@ -2,42 +2,22 @@
 
 describe 'coverage' do
 
-  let(:engine_root) { Rails.root.join('../..') }
+  let(:directories) { %w[app lib] }
+  let(:root) { Rails.root.join('../..') }
 
   it 'has a spec for every file' do
-    %w[app lib].each do |dir|
-      target = engine_root.join(dir, '**/*.{rb,erb,rake}')
-      Dir.glob(target) do |path|
-        next if File.basename(path).match?(/^_/)
-
-        expect(path.sub!(%r{#{engine_root}/}, '')).to have_a_spec
-      end
-    end
-  end
-end
-
-###############################################################################
-# have_a_spec Matcher
-
-RSpec::Matchers.define :have_a_spec do
-
-  description do
-    'has a spec file'
+    missing = files.reject { |path| spec_exists?(path) }
+    missing.each { |path| puts "Missing spec: #{path}" }
+    expect(missing).to be_empty
   end
 
-  match do |path|
-    File.exist?(spec_file_for(path))
+  def files
+    files = directories.map { |dir| Dir.glob(root.join(dir, '**/*.{rb,erb,rake}')) }
+    files = files.flatten.reject { |path| File.basename(path).match?(/^_/) }
+    return files.map { |path| path.sub!(%r{#{root}/}, '') }
   end
 
-  failure_message do |path|
-    "expected #{path} to have spec at #{spec_file_for(path)}"
-  end
-
-  failure_message_when_negated do |path|
-    "expected #{path} to not have spec at #{spec_file_for(path)}"
-  end
-
-  def spec_file_for(path)
+  def spec_exists?(path)
     basename = File.basename(path, '.rb')
     spec = "#{basename}_spec.rb"
 
@@ -45,6 +25,7 @@ RSpec::Matchers.define :have_a_spec do
     dirname.gsub!(/^app/, 'spec')
     dirname.gsub!(/^lib/, 'spec/lib')
 
-    return File.join(dirname, spec)
+    spec = File.join(dirname, spec)
+    return File.exist?(spec)
   end
 end
