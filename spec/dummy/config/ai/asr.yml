@@ -2,9 +2,9 @@ aws: &aws
   adapter: aws
   access_key_id: <%= ENV.fetch('AWS_ACCESS_KEY_ID') %>
   secret_access_key: <%= ENV.fetch('AWS_SECRET_ACCESS_KEY') %>
-  region: us-east-1
-  bucket: ai.masterclass.dev
-  folder: transcribe
+  region: <%= ENV.fetch('AWS_REGION') %>
+  bucket: <%= ENV.fetch('AWS_TRANSCRIBE_BUCKET') %>
+  folder: <%= ENV.fetch('AWS_TRANSCRIBE_FOLDER') %>
   sleep: 10
   language_code: en-US
 
