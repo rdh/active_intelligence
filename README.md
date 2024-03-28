@@ -15,7 +15,7 @@ And then execute:
 $ bundle
 ```
 
-## Basic Usage
+## LLM Usage
 
 ### 1. Configuration
 Configure your LLM in `config/ai/llm.yml`, something like:
@@ -57,6 +57,59 @@ Add `include ActiveIntelligence::Promptable` to your model, which adds the `#to_
 default_response = user.from_llm 
 invite_response = user.from_llm(:invite)
 ```
+
+## ASR Usage
+
+### 1. Configuration
+Configure your LLM in `config/ai/llm.yml`, something like:
+```yaml
+aws: &aws
+  adapter: aws
+  access_key_id: <%= ENV.fetch('AWS_ACCESS_KEY_ID') %>
+  secret_access_key: <%= ENV.fetch('AWS_SECRET_ACCESS_KEY') %>
+  region: <%= ENV.fetch('AWS_REGION') %>
+  bucket: <%= ENV.fetch('AWS_TRANSCRIBE_BUCKET') %>
+  folder: <%= ENV.fetch('AWS_TRANSCRIBE_FOLDER') %>
+  language_code: en-US
+  
+openai: &openai
+  adapter: openai
+  access_token: <%= ENV.fetch('OPENAI_ACCESS_TOKEN') %>
+  organization_id: <%= ENV.fetch('OPENAI_ORGANIZATION_ID')  %>
+  request_timeout: 300
+  model: whisper-1
+  
+development:
+  <<: *openai
+```
+
+### 2. Use the ASR
+
+```ruby
+adapter = ActiveIntelligence::ASR::Config.new.adapter
+puts adapter.transcribe('spec/data/audio/ebn.wav')
+```
+
+## General Concepts
+
+### Architecture
+
+The engine currently has two significant modules: `ASR` and `LLM`.
+Each module has a common `Config` and `Adapter` pattern.
+
+### Adapters
+
+The config is a constructor for the adapter.  
+By default, it uses the `Rails.env` as the key, but you can specify one:
+```ruby
+adapter = ActiveIntelligence::ASR::Config.new.adapter # uses Rails.env
+adapter = ActiveIntelligence::ASR::Config.new.adapter(:foobar) # uses the named configuration
+```
+
+### Configuration
+
+Values in a configuration will "flow through" to services called by the adapter, so you can set defaults in the configuration.
+Options provided directly to calls will take precedence over the configuration.
 
 ## Contributing
 Contribution directions go here.
