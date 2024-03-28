@@ -4,7 +4,7 @@ module ActiveIntelligence
   module ASR
     class Adapter < ActiveIntelligence::Adapter
 
-      def transcribe(file, options = {})
+      def transcribe(path, options = {})
         raise NotImplementedError
       end
     end

@@ -7,9 +7,9 @@ module ActiveIntelligence
     class OpenAIAdapter < Adapter
       include ActiveIntelligence::Concerns::OpenAI
 
-      def transcribe(file, options = {})
+      def transcribe(path, options = {})
         parameters = default_parameters.merge(options)
-        parameters[:file] = File.open(file, 'rb')
+        parameters[:file] = File.open(path, 'rb')
 
         response = client.audio.transcribe(parameters:)
         return response['text']

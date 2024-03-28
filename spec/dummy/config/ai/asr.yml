@@ -5,6 +5,7 @@ aws: &aws
   region: us-east-1
   bucket: ai.masterclass.dev
   folder: transcribe
+  sleep: 60
 
 openai: &openai
   adapter: openai
@@ -14,7 +15,7 @@ openai: &openai
   model: whisper-1
 
 development:
-  <<: *openai
+  <<: *aws
 
 test:
   <<: *openai
