@@ -7,6 +7,10 @@ module ActiveIntelligence
       def transcribe(path, options = {})
         raise NotImplementedError
       end
+
+      def logger
+        Rails.logger
+      end
     end
   end
 end

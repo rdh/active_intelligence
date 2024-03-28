@@ -8,11 +8,13 @@ module ActiveIntelligence
       included do
         def default_parameters
           settings.except(
+            :adapter,
             :region,
             :access_key_id,
             :secret_access_key,
             :bucket,
-            :folder
+            :folder,
+            :sleep
           )
         end
       end

@@ -5,7 +5,14 @@ aws: &aws
   region: us-east-1
   bucket: ai.masterclass.dev
   folder: transcribe
-  sleep: 60
+  sleep: 10
+  language_code: en-US
+
+aws_diarization: &aws_diarization
+  <<: *aws
+  settings:
+    show_speaker_labels: true
+    max_speaker_labels: 10
 
 openai: &openai
   adapter: openai
@@ -15,7 +22,7 @@ openai: &openai
   model: whisper-1
 
 development:
-  <<: *aws
+  <<: *aws_diarization
 
 test:
   <<: *openai

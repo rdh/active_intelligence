@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 require 'aws-sdk-transcribeservice'
 
 module ActiveIntelligence
@@ -33,10 +32,6 @@ module ActiveIntelligence
         )
       end
 
-      def default_parameters
-        super.except(:sleep)
-      end
-
       def download(info)
         url = info.transcription_job.transcript.transcript_file_uri
         transcript = s3_download(key(url))
@@ -55,23 +50,27 @@ module ActiveIntelligence
         File.basename(path)
       end
 
-      def parameters(key)
-        {
-          transcription_job_name: "transcribe-#{Time.now.to_i}",
-          language_code: 'en-US',
+      def parameters(key, options)
+        now = Time.now.to_i
+
+        parameters = {
+          transcription_job_name: "transcribe-#{now}",
+          language_code: settings[:language_code] || 'en-US',
           media_format: format(key),
           media: { media_file_uri: s3_url(key) },
           output_bucket_name: settings[:bucket],
-          output_key: s3_path("transcribe-#{Time.now.to_i}.json")
+          output_key: s3_path("transcribe-#{now}.json")
         }
+
+        return default_parameters.deep_merge(parameters).deep_merge(options)
       end
 
-      def start(key, options = {})
-        parameters = parameters(key).deep_merge(options)
+      def start(key, options)
+        parameters = parameters(key, options)
         client.start_transcription_job(parameters)
 
         job = parameters[:transcription_job_name]
-        Rails.logger.debug("AwsAdapter#start, job=#{job}")
+        logger.debug("AwsAdapter#start: job=#{job}")
 
         return job
       end
@@ -83,13 +82,15 @@ module ActiveIntelligence
       def upload(path)
         key = key(path)
         s3_upload(path, key)
+        logger.debug("AwsAdapter#upload: path=#{path}, key=#{key}")
+
         return key
       end
 
       def wait(job)
         loop do
           info = info(job)
-          Rails.logger.debug("AwsAdapter#wait, job=#{job}, status=#{status(info)}")
+          logger.debug("AwsAdapter#wait: job=#{job}, status=#{status(info)}")
 
           case status(info)
             when 'COMPLETED' then return info

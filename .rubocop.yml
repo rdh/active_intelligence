@@ -48,6 +48,13 @@ Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented_relative_to_receiver
 
 #############################################################################
+# Metrics
+
+Metrics/BlockLength:
+  Exclude:
+    - lib/active_intelligence/concerns/s3.rb
+
+#############################################################################
 # Rails
 
 Rails/ReflectionClassName:
