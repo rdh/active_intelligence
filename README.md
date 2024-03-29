@@ -2,6 +2,10 @@
 
 A Rails engine that provides Rails-y AI integration
 
+## Caveat
+
+This engine is in (very) early development and breaking changes are expected.
+Use at your own risk or contribute at your pleasure.
 
 ## Installation
 Add this line to your application's Gemfile:

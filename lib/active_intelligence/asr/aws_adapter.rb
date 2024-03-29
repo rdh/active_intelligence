@@ -21,6 +21,11 @@ module ActiveIntelligence
         return raw ? json : json[:results][:transcripts].first[:transcript]
       end
 
+      def diarize(path, options = {})
+        json = transcribe(path, options.merge(raw: true))
+        return Diarizer.new(json).lines.join("\n")
+      end
+
       #########################################################################
       # private
 
@@ -98,6 +103,72 @@ module ActiveIntelligence
           end
 
           sleep settings[:sleep] || 60
+        end
+      end
+
+      #########################################################################
+      # Diarizer
+
+      class Diarizer
+        def initialize(json)
+          @json = json
+
+          @line = nil
+          @lines = nil
+          @speaker = nil
+          @starts = nil
+        end
+
+        def lines
+          return @lines if @lines
+
+          @lines = []
+          items.each { |item| process(item) }
+          @lines << @line.join(' ') if @line
+
+          return @lines
+        end
+
+        def process(item)
+          content = item[:alternatives].first[:content]
+          process_speaker(item) unless item[:type] == 'punctuation'
+          @line << content
+        end
+
+        def process_speaker(item)
+          speaker = starts[item[:start_time]]
+          return if speaker == @speaker
+
+          @lines << @line.join(' ') if @line
+
+          @speaker = speaker
+          @line = ["#{@speaker}:"]
+        end
+
+        def starts
+          return @starts if @starts
+
+          @starts = {}
+          segments.each do |segment|
+            speaker = segment[:speaker_label]
+
+            segment[:items].each do |item|
+              starts[item[:start_time]] = speaker
+            end
+          end
+
+          return @starts
+        end
+
+        #######################################################################
+        # Accessors
+
+        def items
+          @json[:results][:items]
+        end
+
+        def segments
+          @json[:results][:speaker_labels][:segments]
         end
       end
     end
