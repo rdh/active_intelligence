@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    active_intelligence (0.1.0)
+    active_intelligence (0.2.0)
       aws-sdk-s3
       aws-sdk-transcribeservice
       rails (>= 7.1.3)
