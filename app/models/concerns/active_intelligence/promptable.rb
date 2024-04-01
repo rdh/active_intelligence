@@ -6,7 +6,7 @@ module ActiveIntelligence
 
     included do
       def from_llm(template = nil, llm = nil)
-        llm = ActiveIntelligence::LLM::Config.adapter(llm)
+        llm = ActiveIntelligence::LLM::Config.new.adapter(llm)
         return llm.generate(to_prompt(template))
       end
 
