@@ -57,11 +57,12 @@ module ActiveIntelligence
 
       def parameters(key, options)
         now = Time.now.to_i
+        format = options.delete(:format) # TODO: This ain't good
 
         parameters = {
           transcription_job_name: "transcribe-#{now}",
           language_code: settings[:language_code] || 'en-US',
-          media_format: options[:format] || format(key),
+          media_format: format || format(key),
           media: { media_file_uri: s3_url(key) },
           output_bucket_name: settings[:bucket],
           output_key: s3_path("transcribe-#{now}.json")
