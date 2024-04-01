@@ -61,7 +61,7 @@ module ActiveIntelligence
         parameters = {
           transcription_job_name: "transcribe-#{now}",
           language_code: settings[:language_code] || 'en-US',
-          media_format: format(key),
+          media_format: options[:format] || format(key),
           media: { media_file_uri: s3_url(key) },
           output_bucket_name: settings[:bucket],
           output_key: s3_path("transcribe-#{now}.json")
