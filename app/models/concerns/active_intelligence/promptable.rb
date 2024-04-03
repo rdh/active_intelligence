@@ -8,7 +8,7 @@ module ActiveIntelligence
       def from_llm(template = nil, options = {})
         adapter = options[:adapter]
         llm = ActiveIntelligence::LLM::Config.new.adapter(adapter)
-        return llm.generate(to_prompt(template))
+        return llm.generate(to_prompt(template, options))
       end
 
       def to_prompt(name = nil, options = {})
