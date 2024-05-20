@@ -5,3 +5,9 @@
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
 end
+
+# SEE: https://www.hocnest.com/blog/testing-an-engine-with-rspec/
+
+FactoryBot.definition_file_paths << ActiveIntelligence::Engine.root.join('spec/factories')
+FactoryBot.factories.clear
+FactoryBot.find_definitions

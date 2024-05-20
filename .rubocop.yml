@@ -20,6 +20,7 @@ AllCops:
     - examples/llm/config/**/*
     - log/**/*
     - node_modules/**/*
+    - spec/dummy/db/**/*
     - tmp/**/*
     - vendor/**/*
 

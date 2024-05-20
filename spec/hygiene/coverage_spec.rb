@@ -3,7 +3,7 @@
 describe 'coverage' do
 
   let(:directories) { %w[app lib] }
-  let(:root) { Rails.root.join('../..') }
+  let(:root) { ActiveIntelligence::Engine.root }
 
   it 'has a spec for every file' do
     missing = files.reject { |path| spec_exists?(path) }
