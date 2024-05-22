@@ -16,6 +16,7 @@ module ActiveIntelligence
           settings.except(
             :adapter,
             :access_token,
+            :chat_message_limit,
             :organization_id,
             :request_timeout
           )

@@ -3,7 +3,8 @@
 module ActiveIntelligence
   class Config
 
-    def adapter(key = Rails.env.to_sym)
+    def adapter(key = nil)
+      key ||= Rails.env.to_sym
       settings = settings(key)
 
       klass = [

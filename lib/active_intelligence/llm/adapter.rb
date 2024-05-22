@@ -7,6 +7,10 @@ module ActiveIntelligence
       def generate(prompt, options = {})
         raise NotImplementedError
       end
+
+      def reply(chat, prompt, options = {})
+        raise NotImplementedError
+      end
     end
   end
 end

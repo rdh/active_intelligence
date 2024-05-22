@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
-# desc "Explaining what the task does"
-# task :active_intelligence do
-#   # Task goes here
-# end
+namespace :active_intelligence do
+
+  desc 'Chat with the AI'
+  task chat: :environment do
+    puts 'Chatting with the AI...'
+  end
+end

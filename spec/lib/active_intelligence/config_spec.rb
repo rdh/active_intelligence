@@ -31,10 +31,18 @@ describe ActiveIntelligence::Config do
       it('raises KeyError') { expect { subject }.to raise_error(KeyError) }
     end
 
-    context 'with a bogus adapter' do
+    context 'with a bogus key' do
       let(:key) { :bogus }
 
       it('raises NameError') { expect { subject }.to raise_error(NameError) }
+    end
+
+    context 'with a nil key' do
+      let(:key) { nil }
+
+      it 'returns the default adapter' do
+        expect(subject).to be_a(ActiveIntelligence::Test::TestAdapter)
+      end
     end
 
     context 'with no key provided' do

@@ -19,6 +19,11 @@ And then execute:
 $ bundle
 ```
 
+To install migrations:
+```bash
+rails active_intelligence:install:migrations
+```
+
 ## LLM Usage
 
 ### 1. Configuration
@@ -61,6 +66,29 @@ Add `include ActiveIntelligence::Promptable` to your model, which adds the `#to_
 default_response = user.from_llm 
 invite_response = user.from_llm(:invite)
 ```
+
+## Chat
+
+### 6. Create a chat prompt
+
+```
+app/prompts/active_intelligence/chat.erb
+```
+```erb
+* Your name is Poe.  You are a fan of Edgar Allan Poe.
+* You are the AI propritor of the Raven Hotel.
+* You exhibit the utmost sincerity and hostpitality.
+```
+  
+### 7. Create a chat, add a message, and get a reply
+
+```ruby
+include ActiveIntelligence
+
+chat = Chat.create!
+chat.messages.create!(role: 'user', content: "Hi!  Who are you?")
+chat.reply
+````
 
 ## ASR Usage
 
