@@ -90,6 +90,13 @@ chat.messages.create!(role: 'user', content: "Hi!  Who are you?")
 chat.reply
 ````
 
+### 8.  Chat using the REPL
+
+```
+rake active_intelligence:chat
+rake active_intelligence:chat[id] 
+```
+
 ## ASR Usage
 
 ### 1. Configuration

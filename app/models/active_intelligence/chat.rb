@@ -9,15 +9,6 @@ module ActiveIntelligence
              dependent: :destroy,
              counter_cache: :messages_count
 
-    def reply(options = {})
-      options = options.dup
-      llm = ActiveIntelligence::LLM::Config.new.adapter(options[:adapter])
-      prompt = options.delete(:prompt) || to_prompt(options.delete(:name))
-
-      reply = llm.reply(self, prompt, options)
-      return messages.create!(role: 'assistant', content: reply)
-    end
-
     def as_json(options = {})
       if options.empty?
         options[:only] = %i[id created_at updated_at]
@@ -26,6 +17,15 @@ module ActiveIntelligence
       end
 
       super(options)
+    end
+
+    def reply(options = {})
+      options = options.dup
+      llm = ActiveIntelligence::LLM::Config.new.adapter(options[:adapter])
+      prompt = options.delete(:prompt) || to_prompt(options.delete(:name))
+
+      reply = llm.reply(self, prompt, options)
+      return messages.create!(role: 'assistant', content: reply)
     end
   end
 end
