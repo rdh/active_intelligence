@@ -69,12 +69,26 @@ invite_response = user.from_llm(:invite)
 
 ## Chat
 
+
+```mermaid
+erDiagram
+    Chat {
+        integer id
+    }
+    ChatMessage {
+        integer id
+        integer chat_id
+        string role
+        string content
+    }
+    Chat ||--o{ ChatMessage : has_many
+```
+
 ### 6. Create a chat prompt
 
 ```
-app/prompts/active_intelligence/chat.erb
-```
-```erb
+# app/prompts/active_intelligence/chat.erb
+
 * Your name is Poe.  You are a fan of Edgar Allan Poe.
 * You are the AI propritor of the Raven Hotel.
 * You exhibit the utmost sincerity and hostpitality.
@@ -87,7 +101,7 @@ include ActiveIntelligence
 
 chat = Chat.create!
 chat.messages.create!(role: 'user', content: "Hi!  Who are you?")
-chat.reply
+puts chat.reply.content
 ````
 
 ### 8.  Chat using the REPL
