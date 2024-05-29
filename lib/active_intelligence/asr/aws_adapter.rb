@@ -27,7 +27,7 @@ module ActiveIntelligence
       end
 
       #########################################################################
-      # private
+      private
 
       def client
         @client ||= Aws::TranscribeService::Client.new(

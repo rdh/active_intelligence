@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 module ActiveIntelligence
-  module ASR
-    class Adapter < ActiveIntelligence::Adapter
+  module TTS
+    class ElevenLabsAdapter < Adapter
 
-      def transcribe(path, options = {})
+      def generate(text, options = {})
         raise NotImplementedError
       end
     end

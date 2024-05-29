@@ -7,5 +7,9 @@ module ActiveIntelligence
     def initialize(settings)
       @settings = settings
     end
+
+    def logger
+      Rails.logger
+    end
   end
 end

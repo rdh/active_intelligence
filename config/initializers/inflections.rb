@@ -5,4 +5,5 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.acronym 'LLM'
   inflect.acronym 'OpenAI'
   inflect.acronym 'REPL'
+  inflect.acronym 'TTS'
 end
