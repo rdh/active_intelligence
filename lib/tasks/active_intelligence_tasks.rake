@@ -8,4 +8,8 @@ namespace :active_intelligence do
     chat = args[:id].nil? ? Chat.create! : Chat.find(args[:id])
     ChatREPLService.call(chat)
   end
+
+  task :asr, [:path] => :environment do |_t, args|
+
+  end
 end
