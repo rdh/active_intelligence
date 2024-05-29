@@ -8,6 +8,10 @@ module ActiveIntelligence
       @settings = settings
     end
 
+    def config(key, options, default = nil)
+      options[key] || settings[key] || default
+    end
+
     def logger
       Rails.logger
     end

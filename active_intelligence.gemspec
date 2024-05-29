@@ -26,5 +26,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'aws-sdk-s3'
   spec.add_dependency 'aws-sdk-transcribeservice'
+  spec.add_dependency 'elevenlabs-rb'
   spec.add_dependency 'ruby-openai'
 end

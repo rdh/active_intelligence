@@ -1,0 +1,10 @@
+eleven_labs: &eleven_labs
+  adapter: eleven_labs
+  api_key: <%= ENV.fetch('ELEVEN_LABS_API_KEY') %>
+  voice_id: <%= ENV.fetch('ELEVEN_LABS_VOICE_ID') %>
+
+development:
+  <<: *eleven_labs
+
+test:
+  <<: *eleven_labs
