@@ -1,0 +1,15 @@
+<h2>Simple Chat Example</h2>
+
+<% @chat.messages.order(:id).each do |message| %>
+  <div class="mb-3">
+    <span class="font-weight-bold"><%= message.role %>:</span>
+    <%= message.content %>
+  </div>
+<% end %>
+
+<%= form_tag simple_update_path(@chat), data: { turbo: false } do %>
+  <div class="d-flex">
+    <%= text_field_tag :content, nil, class: 'form-control' %>
+    <%= submit_tag 'Send', class: 'btn btn-primary ml-auto' %>
+  </div>
+<% end %>

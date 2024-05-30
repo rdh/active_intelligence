@@ -1,3 +1,14 @@
+PATH
+  remote: ../..
+  specs:
+    active_intelligence (0.2.0)
+      aws-sdk-s3
+      aws-sdk-transcribeservice
+      elevenlabs-rb
+      rails (>= 7.1.3)
+      require_all
+      ruby-openai
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -75,11 +86,35 @@ GEM
       minitest (>= 5.1)
       mutex_m
       tzinfo (~> 2.0)
+    addressable (2.8.6)
+      public_suffix (>= 2.0.2, < 6.0)
+    aws-eventstream (1.3.0)
+    aws-partitions (1.937.0)
+    aws-sdk-core (3.196.1)
+      aws-eventstream (~> 1, >= 1.3.0)
+      aws-partitions (~> 1, >= 1.651.0)
+      aws-sigv4 (~> 1.8)
+      jmespath (~> 1, >= 1.6.1)
+    aws-sdk-kms (1.82.0)
+      aws-sdk-core (~> 3, >= 3.193.0)
+      aws-sigv4 (~> 1.1)
+    aws-sdk-s3 (1.151.0)
+      aws-sdk-core (~> 3, >= 3.194.0)
+      aws-sdk-kms (~> 1)
+      aws-sigv4 (~> 1.8)
+    aws-sdk-transcribeservice (1.98.0)
+      aws-sdk-core (~> 3, >= 3.193.0)
+      aws-sigv4 (~> 1.1)
+    aws-sigv4 (1.8.0)
+      aws-eventstream (~> 1, >= 1.0.2)
     base64 (0.2.0)
     bigdecimal (3.1.8)
     bindex (0.8.1)
     bootsnap (1.18.3)
       msgpack (~> 1.2)
+    bootstrap_form (5.4.0)
+      actionpack (>= 6.1)
+      activemodel (>= 6.1)
     builder (3.2.4)
     concurrent-ruby (1.3.1)
     connection_pool (2.4.1)
@@ -90,21 +125,48 @@ GEM
     debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    domain_name (0.6.20240107)
+    dotenv (3.1.2)
+    dotenv-rails (3.1.2)
+      dotenv (= 3.1.2)
+      railties (>= 6.1)
     drb (2.2.1)
+    elevenlabs-rb (0.1.0)
+      http (= 5.1.1)
     erubi (1.12.0)
+    event_stream_parser (1.0.0)
+    faraday (2.9.0)
+      faraday-net_http (>= 2.0, < 3.2)
+    faraday-multipart (1.0.4)
+      multipart-post (~> 2)
+    faraday-net_http (3.1.0)
+      net-http
+    ffi (1.16.3)
+    ffi-compiler (1.3.2)
+      ffi (>= 1.15.5)
+      rake
     globalid (1.2.1)
       activesupport (>= 6.1)
+    http (5.1.1)
+      addressable (~> 2.8)
+      http-cookie (~> 1.0)
+      http-form_data (~> 2.2)
+      llhttp-ffi (~> 0.4.0)
+    http-cookie (1.0.5)
+      domain_name (~> 0.5)
+    http-form_data (2.3.0)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     io-console (0.7.2)
     irb (1.13.1)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
-    jbuilder (2.12.0)
-      actionview (>= 5.0.0)
-      activesupport (>= 5.0.0)
+    jmespath (1.6.2)
     jsbundling-rails (1.3.0)
       railties (>= 6.0.0)
+    llhttp-ffi (0.4.0)
+      ffi-compiler (~> 1.0)
+      rake (~> 13.0)
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -117,7 +179,10 @@ GEM
     mini_mime (1.1.5)
     minitest (5.23.1)
     msgpack (1.7.2)
+    multipart-post (2.4.1)
     mutex_m (0.2.0)
+    net-http (0.4.1)
+      uri
     net-imap (0.4.11)
       date
       net-protocol
@@ -142,6 +207,7 @@ GEM
       racc (~> 1.4)
     psych (5.1.2)
       stringio
+    public_suffix (5.0.5)
     puma (6.4.2)
       nio4r (~> 2.0)
     racc (1.8.0)
@@ -191,6 +257,11 @@ GEM
       connection_pool
     reline (0.5.8)
       io-console (~> 0.5)
+    require_all (3.0.0)
+    ruby-openai (7.0.1)
+      event_stream_parser (>= 0.3.0, < 2.0.0)
+      faraday (>= 1)
+      faraday-multipart (>= 1)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -215,6 +286,7 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    uri (0.13.0)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -235,13 +307,15 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  active_intelligence!
   bootsnap
+  bootstrap_form (~> 5.4)
   cssbundling-rails
   debug
-  jbuilder
+  dotenv-rails
   jsbundling-rails
   puma (>= 5.0)
-  rails (~> 7.1.3, >= 7.1.3.3)
+  rails (~> 7.1.3, >= 7.1.3.2)
   redis (>= 4.0.1)
   sprockets-rails
   sqlite3 (~> 1.4)

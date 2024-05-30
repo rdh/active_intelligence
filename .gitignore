@@ -12,6 +12,6 @@
 /.idea/
 
 .env
-!/.env.template
+!.env.template
 
 .DS_Store
