@@ -1,0 +1,11 @@
+<h2>Turbo Chat Example</h2>
+
+<div id="message-frame" class="col-md-10 bg-dark text-light">
+  <%= turbo_stream_from @chat %>
+  <div id="messages">
+    <%= render partial: 'turbo/message', collection: @chat.messages.order('id') %>
+  </div>
+  <div id="message-form" class="form-group">
+    <%= render partial: 'turbo/form' %>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+#message-frame {
+  height: 100vh;
+  overflow: scroll;
+  padding-bottom: 100px;
+}
+
+#message-form {
+  position: fixed;
+  bottom: 0;
+  width: 90%
+}
+
+#message-content {
+  width: 80%;
+  margin-right: 5px;
+}
+
+.message-box {
+  width: fit-content;
+  max-width: 80%;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #555555 ;
+  padding: 10px
+}
+
+.message-row.user {
+  display: flex;
+  justify-content: flex-end
+}
+
+.message-box.user {
+  background-color: #007bff !important;
+  padding: 10px;
+}

@@ -1,0 +1,163 @@
+/* SEE: https://codepen.io/filingroove/pen/yagWRm */
+
+@mixin flex($justify, $align) {
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+
+  justify-content: $justify;
+  -webkit-justify-content: $justify;
+  align-items: $align;
+  -webkit-align-items: $align;
+}
+
+// SPINNER
+.spinner {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 45px;
+  height: 9px;
+
+  margin-left: -22px;
+  margin-top: -13px;
+
+  text-align: center;
+}
+.spinner > div {
+  width: 9px;
+  height: 9px;
+  background-color: #dcdcdc;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1400ms ease-in-out infinite;
+  /* Prevent first frame from flickering when animation starts */ -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+
+}
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+@mixin bouncedelay() {
+  0%, 80%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  }
+  40% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+@-webkit-keyframes bouncedelay {
+  @include bouncedelay();
+}
+@keyframes bouncedelay {
+  @include bouncedelay();
+}
+
+
+//	Loading bubble
+$chat-accent: #2e66bd;
+$chat-light: #ffffff;
+$chat-bg: #f5f7f8;
+$chat-online: #99e67c;
+$chat-away: #ffbf53;
+$chat-dim: #a5b0b5;
+$modifier: 0.5;
+
+#container {
+  position: absolute;
+
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+
+  @include flex( space-around, center );
+}
+#loading-bubble {
+
+  @include flex( center, center );
+
+  width: auto;
+  height: auto;
+
+  min-width: 146px * $modifier;
+  min-height: 80px * $modifier;
+  border-radius: 10px * $modifier;
+
+  box-sizing: border-box;
+
+  position: relative;
+
+  background-color: $chat-accent;
+
+  &.grey {
+    background-color: $chat-dim;
+
+    &:before {
+      border-color: transparent $chat-dim transparent transparent;
+    }
+  }
+
+  &:before {
+    display: block;
+    content: " ";
+
+    width: 0;
+    height: 0;
+    border-style: solid;
+
+    $size: 16px * $modifier;
+    border-width: $size $size $size 0;
+    border-color: transparent $chat-accent transparent transparent;
+
+    position: absolute;
+
+    left: -14px * $modifier;
+
+    top: 26px * $modifier;
+
+  }
+
+  .spinner {
+    position: static !important;
+    margin-top: -11px;
+    margin-left: 0px;
+
+    div {
+      background-color: #fff;
+    }
+  }
+
+  -webkit-animation: message-bounce 2.5s infinite ease-in-out;
+  animation: message-bounce 2.5s ease-in-out infinite;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@mixin message-bounce() {
+  0% {
+    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+  }
+}
+@keyframes message-bounce {
+  @include message-bounce();
+}

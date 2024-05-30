@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get '/simple' => 'simple#index', as: :simple_index
   post '/simple/:id' => 'simple#update', as: :simple_update
 
+  get '/turbo' => 'turbo#index', as: :turbo_index
+  post '/turbo/:id' => 'turbo#update', as: :turbo_update
+
   # Defines the root path route ("/")
   root 'root#index'
 end

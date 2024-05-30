@@ -1,0 +1,6 @@
+<%= form_tag(turbo_update_path(@chat), remote: true, class: "d-flex",
+             data: { controller: "hello", action: "turbo:submit-start->hello#reset" }
+    ) do %>
+  <%= text_field_tag :content, '', id: 'message-content', class: "form-control", autocomplete: 'off' %>
+  <%= submit_tag 'Send', data: { disable_with: false }, class: "btn btn-primary" %>
+<% end %>
