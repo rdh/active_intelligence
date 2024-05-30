@@ -152,9 +152,12 @@ eleven_labs: &eleven_labs
   adapter: eleven_labs
   api_key: <%= ENV.fetch('ELEVEN_LABS_API_KEY') %>
 
-development:
+charlie: &charlie
   <<: *eleven_labs
   voice_id: IKne3meq5aSn9XLyUdCD
+
+development:
+  <<: *charlie
 ```
 
 ### 2.  Use the TTS
