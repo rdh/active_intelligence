@@ -44,7 +44,7 @@ development:
 ### 2. Use the LLM
 
 ```ruby
-adapter = ActiveIntelligence::LLM::Config.new.adapter
+adapter = ActiveIntelligence::LLM::Config.adapter
 puts adapter.generate("Tell me a joke")
 ```
 
@@ -139,15 +139,36 @@ development:
 ### 2. Use the ASR
 
 ```ruby
-adapter = ActiveIntelligence::ASR::Config.new.adapter
+adapter = ActiveIntelligence::ASR::Config.adapter
 puts adapter.transcribe('spec/data/audio/ebn.wav')
+```
+
+## TTS Usage
+
+### 1. Configuration
+Configure your LLM in `config/ai/tts.yml`, something like:
+```yaml
+eleven_labs: &eleven_labs
+  adapter: eleven_labs
+  api_key: <%= ENV.fetch('ELEVEN_LABS_API_KEY') %>
+
+development:
+  <<: *eleven_labs
+  voice_id: IKne3meq5aSn9XLyUdCD
+```
+
+### 2.  Use the TTS
+
+```ruby
+adapter = ActiveIntelligence::TTS.adapter
+adapter.generate_file('Hello darkness, my old friend', 'tmp/hello.mp3')
 ```
 
 ## General Concepts
 
 ### Architecture
 
-The engine currently has two significant modules: `ASR` and `LLM`.
+The engine currently has three significant modules: `ASR`, `LLM`, and `TTS`.
 Each module has a common `Config` and `Adapter` pattern.
 
 ### Adapters
@@ -155,8 +176,8 @@ Each module has a common `Config` and `Adapter` pattern.
 The config is a constructor for the adapter.  
 By default, it uses the `Rails.env` as the key, but you can specify one:
 ```ruby
-adapter = ActiveIntelligence::ASR::Config.new.adapter # uses Rails.env
-adapter = ActiveIntelligence::ASR::Config.new.adapter(:foobar) # uses the named configuration
+adapter = ActiveIntelligence::ASR.adapter # uses Rails.env
+adapter = ActiveIntelligence::ASR.adapter(:foobar) # uses the named configuration
 ```
 
 ### Configuration
