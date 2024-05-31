@@ -15,10 +15,8 @@ AllCops:
     - config/initializers/**/*
     - config/locales/*
     - db/**/*
-    - examples/asr/bin/**/*
-    - examples/asr/config/**/*
-    - examples/llm/bin/**/*
-    - examples/llm/config/**/*
+    - examples/*/bin/**/*
+    - examples/*/config/**/*
     - log/**/*
     - node_modules/**/*
     - spec/dummy/db/**/*

@@ -10,4 +10,5 @@ development:
   <<: *charlie
 
 test:
-  <<: *charlie
+  adapter: mock
+  path: spec/data/audio/mock.mp3

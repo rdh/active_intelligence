@@ -25,4 +25,4 @@ development:
   <<: *aws_diarization
 
 test:
-  <<: *openai
+  adapter: mock

@@ -4,7 +4,7 @@ module ActiveIntelligence
   class Adapter
     attr_reader :settings
 
-    def initialize(settings)
+    def initialize(settings = {})
       @settings = settings
     end
 

@@ -9,4 +9,4 @@ development:
   <<: *openai
 
 test:
-  <<: *openai
+  adapter: mock
