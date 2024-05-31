@@ -5,6 +5,8 @@ module ActiveIntelligence
     class MockAdapter < Adapter
 
       def generate(_text, _options = {})
+        return nil if settings[:path].nil?
+
         return File.open(settings[:path]).read
       end
     end
