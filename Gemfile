@@ -7,8 +7,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 
 gem 'dotenv-rails'
+gem 'pg', '~> 1.1'
 gem 'puma'
-gem 'sqlite3', '~> 1.4'
 
 gem 'sprockets-rails'
 
