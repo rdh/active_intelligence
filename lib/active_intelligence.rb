@@ -13,6 +13,8 @@ require_rel 'active_intelligence/asr'
 require_rel 'active_intelligence/llm'
 require_rel 'active_intelligence/tts'
 
+require 'neighbor'
+
 module ActiveIntelligence
   # Your code goes here...
 end

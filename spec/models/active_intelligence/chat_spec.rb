@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 describe ActiveIntelligence::Chat do
+
   #############################################################################
   # Class
 

@@ -5,6 +5,7 @@ PATH
       aws-sdk-s3
       aws-sdk-transcribeservice
       elevenlabs-rb
+      neighbor
       rails (>= 7.1.3)
       require_all
       ruby-openai
@@ -179,6 +180,8 @@ GEM
     minitest (5.23.0)
     multipart-post (2.4.1)
     mutex_m (0.2.0)
+    neighbor (0.3.2)
+      activerecord (>= 6.1)
     net-http (0.4.1)
       uri
     net-imap (0.4.11)
