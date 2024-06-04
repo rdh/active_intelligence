@@ -79,6 +79,6 @@ test:
 #
 production:
   <<: *default
-  database: active_intelligence__production
-  username: active_intelligence_
+  database: active_intelligence_production
+  username: active_intelligence
   password: <%= ENV["ACTIVE_INTELLIGENCE_DATABASE_PASSWORD"] %>
