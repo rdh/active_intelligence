@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
 module ActiveIntelligence
-  module ASR
+  module Embeddings
     class OpenAIAdapter < Adapter
       include ActiveIntelligence::Concerns::OpenAI
 
-      def transcribe(path, options = {})
+      def generate(text, options = {})
         parameters = default_parameters.merge(options)
-        parameters[:file] = File.open(path, 'rb')
+        parameters[:input] = text
 
-        response = client.audio.transcribe(parameters:)
-        return response['text']
+        response = client.embeddings(parameters:)
+        return response.dig('data', 0, 'embedding')
       end
     end
   end

@@ -10,6 +10,7 @@ require 'active_intelligence/config'
 
 require_rel 'active_intelligence/concerns'
 require_rel 'active_intelligence/asr'
+require_rel 'active_intelligence/embeddings'
 require_rel 'active_intelligence/llm'
 require_rel 'active_intelligence/tts'
 

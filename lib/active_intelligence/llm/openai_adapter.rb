@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'openai'
-
 module ActiveIntelligence
   module LLM
     class OpenAIAdapter < Adapter
