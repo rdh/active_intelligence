@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This migration comes from active_intelligence (originally 20240520181009)
 class CreateActiveIntelligenceChats < ActiveRecord::Migration[7.1]
   def change

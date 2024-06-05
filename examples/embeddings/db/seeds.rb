@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
@@ -59,24 +61,24 @@ book.chapters.find_or_create_by!(number: 9,
 book.chapters.find_or_create_by!(number: 10,
                                  title: 'ON THE GEOLOGICAL SUCCESSION OF ORGANIC BEINGS',
                                  start_line: 9412,
-                                 end_line: 10407)
+                                 end_line: 10_407)
 
 book.chapters.find_or_create_by!(number: 11,
                                  title: 'GEOGRAPHICAL DISTRIBUTION',
-                                 start_line: 10415,
-                                 end_line: 11486)
+                                 start_line: 10_415,
+                                 end_line: 11_486)
 
 book.chapters.find_or_create_by!(number: 12,
                                  title: 'GEOGRAPHICAL DISTRIBUTION—_continued_',
-                                 start_line: 11494,
-                                 end_line: 12296)
+                                 start_line: 11_494,
+                                 end_line: 12_296)
 
 book.chapters.find_or_create_by!(number: 13,
                                  title: 'MUTUAL AFFINITIES OF ORGANIC BEINGS: MORPHOLOGY: EMBRYOLOGY: RUDIMENTARY ORGANS',
-                                 start_line: 12305,
-                                 end_line: 13685)
+                                 start_line: 12_305,
+                                 end_line: 13_685)
 
 book.chapters.find_or_create_by!(number: 14,
                                  title: 'RECAPITULATION AND CONCLUSION',
-                                 start_line: 13693,
-                                 end_line: 14613)
+                                 start_line: 13_693,
+                                 end_line: 14_613)

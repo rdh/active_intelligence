@@ -1,18 +1,15 @@
+# frozen_string_literal: true
+
 class Chapter < ApplicationRecord
   belongs_to :book
   has_many :paragraphs, dependent: :destroy
 
   def import!
-    number = 0
-    buffer = []
+    buffer = Buffer.new
 
     lines.each do |line|
       if line.empty?
-        number += 1
-        content = buffer.join("\n")
-        paragraphs.create!(number:, content:).import! unless content.empty?
-
-        buffer.clear
+        buffer.flush
       else
         buffer << line
       end
@@ -21,5 +18,25 @@ class Chapter < ApplicationRecord
 
   def lines
     @lines ||= book.lines[start_line..end_line]
+  end
+
+  class Buffer
+    def initialize(paragraphs)
+      @buffer = []
+      @number = 0
+      @paragraphs = paragraphs
+    end
+
+    def <<(line)
+      @buffer << line
+    end
+
+    def flush
+      content = @buffer.join("\n")
+      return if content.empty?
+
+      paragraphs.create!(number: @number += 1, content:).import!
+      @buffer = []
+    end
   end
 end

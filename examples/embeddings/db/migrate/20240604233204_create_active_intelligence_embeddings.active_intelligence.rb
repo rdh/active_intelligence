@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This migration comes from active_intelligence (originally 20240603225729)
 class CreateActiveIntelligenceEmbeddings < ActiveRecord::Migration[7.1]
   def change

@@ -17,6 +17,7 @@ AllCops:
     - db/**/*
     - examples/*/bin/**/*
     - examples/*/config/**/*
+    - examples/*/db/**/*
     - log/**/*
     - node_modules/**/*
     - spec/dummy/db/**/*
