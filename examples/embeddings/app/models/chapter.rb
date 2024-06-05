@@ -2,13 +2,16 @@ class Chapter < ApplicationRecord
   belongs_to :book
   has_many :paragraphs, dependent: :destroy
 
-  def import
+  def import!
     number = 0
     buffer = []
 
     lines.each do |line|
       if line.empty?
-        paragraphs.create!(number: number += 1, content: buffer.join("\n"))
+        number += 1
+        content = buffer.join("\n")
+        paragraphs.create!(number:, content:).import! unless content.empty?
+
         buffer.clear
       else
         buffer << line

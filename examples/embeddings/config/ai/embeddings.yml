@@ -1,0 +1,12 @@
+openai: &openai
+  adapter: openai
+  access_token: <%= ENV.fetch('OPENAI_ACCESS_TOKEN') %>
+  organization_id: <%= ENV.fetch('OPENAI_ORGANIZATION_ID')  %>
+  request_timeout: 30
+  model: text-embedding-3-small
+
+development:
+  <<: *openai
+
+test:
+  adapter: mock

@@ -1,0 +1,35 @@
+<div class="row">
+  <h2>Query</h2>
+
+  <%= bootstrap_form_tag url: '/', method: :get do |f| %>
+    <%= f.text_field :query, value: @query %>
+    <%= f.submit 'Search', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+<div class="row">
+  <h2>Results</h2>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Chapter</th>
+        <th scope="col">Title</th>
+        <th scope="col">Paragraph</th>
+        <th scope="col">Content</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @paragraphs.each do |paragraph| %>
+        <tr>
+          <td><%= paragraph.chapter.number %></td>
+          <td><%= paragraph.chapter.title %></td>
+          <td><%= paragraph.number %></td>
+          <td><%= bold_query(paragraph.content, @query) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

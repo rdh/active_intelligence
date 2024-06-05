@@ -19,9 +19,11 @@ module ActiveIntelligence
 
     class_methods do
       def semantic_search(text, options = {})
+        limit = options[:limit] || 10
         adapter = ActiveIntelligence::Embeddings.adapter(options[:adapter])
         embedding = adapter.generate(text, options)
-        return nearest_neighbors(:embedding, embedding, distance: 'cosine')
+        neighbors = ActiveIntelligence::Embedding.nearest_neighbors(:embedding, embedding, distance: 'cosine')
+        return neighbors.first(limit).map(&:embeddable)
       end
     end
   end

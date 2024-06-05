@@ -2,6 +2,8 @@
 
 module ActiveIntelligence
   class Embedding < ApplicationRecord
+    belongs_to :embeddable, polymorphic: true
+
     has_neighbors :embedding
   end
 end
