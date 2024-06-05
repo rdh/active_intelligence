@@ -84,3 +84,4 @@ book.chapters.find_or_create_by!(number: 14,
                                  end_line: 14_613)
 
 book.import! { print '.' }
+puts
