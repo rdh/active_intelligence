@@ -3,8 +3,8 @@
 class Book < ApplicationRecord
   has_many :chapters, dependent: :destroy
 
-  def import!
-    chapters.each(&:import!)
+  def import!(&block)
+    chapters.each { |chapter| chapter.import!(&block) }
   end
 
   def lines

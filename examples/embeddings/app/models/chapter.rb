@@ -4,15 +4,11 @@ class Chapter < ApplicationRecord
   belongs_to :book
   has_many :paragraphs, dependent: :destroy
 
-  def import!
-    buffer = Buffer.new
+  def import!(&block)
+    buffer = Buffer.new(paragraphs)
 
     lines.each do |line|
-      if line.empty?
-        buffer.flush
-      else
-        buffer << line
-      end
+      line.empty? ? buffer.flush(&block) : buffer << line
     end
   end
 
@@ -20,23 +16,28 @@ class Chapter < ApplicationRecord
     @lines ||= book.lines[start_line..end_line]
   end
 
+  #############################################################################
+  # Buffer
+
   class Buffer
+    attr_reader :lines, :paragraphs
+
+    delegate :<<, to: :lines
+
     def initialize(paragraphs)
-      @buffer = []
+      @lines = []
       @number = 0
       @paragraphs = paragraphs
     end
 
-    def <<(line)
-      @buffer << line
-    end
-
     def flush
-      content = @buffer.join("\n")
+      content = lines.join("\n")
       return if content.empty?
 
       paragraphs.create!(number: @number += 1, content:).import!
-      @buffer = []
+      @lines = []
+
+      yield if block_given?
     end
   end
 end

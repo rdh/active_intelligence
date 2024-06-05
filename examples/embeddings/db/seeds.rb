@@ -82,3 +82,5 @@ book.chapters.find_or_create_by!(number: 14,
                                  title: 'RECAPITULATION AND CONCLUSION',
                                  start_line: 13_693,
                                  end_line: 14_613)
+
+book.import! { print '.' }

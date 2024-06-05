@@ -6,7 +6,6 @@ class Paragraph < ApplicationRecord
   belongs_to :chapter
 
   def import!
-    chapter.paragraphs.create!(content:)
     add_embedding(content)
   end
 end
