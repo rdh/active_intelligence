@@ -6,7 +6,12 @@ module ActiveIntelligence
       include ActiveIntelligence::Concerns::OpenAI
 
       def chat(parameters)
+        logger.debug [self.class.name, __method__, 'parameters', parameters]
+
         response = client.chat(parameters:)
+
+        logger.debug [self.class.name, __method__, 'response', response]
+
         return response.dig('choices', 0, 'message', 'content')
       end
 
