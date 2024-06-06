@@ -8,7 +8,7 @@ module ActiveIntelligence
         raise NotImplementedError
       end
 
-      def reply(chat, prompt, options = {})
+      def reply(chat, options = {})
         raise NotImplementedError
       end
     end

@@ -8,7 +8,7 @@ module ActiveIntelligence
         return 'This is a mock response'
       end
 
-      def reply(_chat, _prompt, _options = {})
+      def reply(_chat, _options = {})
         return 'This is a mock response'
       end
     end

@@ -17,18 +17,28 @@ module ActiveIntelligence
         return chat(parameters)
       end
 
-      def reply(chat, prompt, options = {})
-        limit = options[:limit] || settings[:chat_message_limit] || 10
-
+      def reply(chat, options = {})
+        options = options.dup
         parameters = default_parameters
-        parameters[:messages] = [{ role: 'system', content: prompt }]
-
-        messages = chat.messages.order(created_at: :desc).limit(limit).reverse
-        messages.each do |message|
-          parameters[:messages] << { role: message.role, content: message.content }
-        end
+        parameters[:messages] = messages(chat, options)
 
         return chat(parameters)
+      end
+
+      private
+
+      def message(chat, options)
+        prompt = chat.to_prompt(options.delete(:name))
+        messages = [{ role: 'system', content: prompt }]
+
+        limit = options[:limit] || settings[:chat_message_limit] || 10
+        query = chat.messages.order(created_at: :desc).limit(limit).reverse
+
+        query.each do |message|
+          messages << { role: message.role, content: message.content }
+        end
+
+        return messages
       end
     end
   end

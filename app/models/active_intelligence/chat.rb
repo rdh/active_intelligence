@@ -22,9 +22,8 @@ module ActiveIntelligence
     def reply(options = {})
       options = options.dup
       llm = ActiveIntelligence::LLM::Config.new.adapter(options[:adapter])
-      prompt = options.delete(:prompt) || to_prompt(options.delete(:name))
 
-      reply = llm.reply(self, prompt, options)
+      reply = llm.reply(self, options)
       return messages.create!(role: 'assistant', content: reply)
     end
   end
