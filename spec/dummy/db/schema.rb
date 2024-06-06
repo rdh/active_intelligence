@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_03_225729) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_05_234023) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "vector"
+
+  create_table "active_intelligence_chat_message_embeddings", force: :cascade do |t|
+    t.bigint "chat_message_id", null: false
+    t.bigint "embedding_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_message_id"], name: "idx_on_chat_message_id_efa2a8993e"
+    t.index ["embedding_id"], name: "idx_on_embedding_id_16d71b199c"
+  end
 
   create_table "active_intelligence_chat_messages", force: :cascade do |t|
     t.bigint "chat_id", null: false

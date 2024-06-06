@@ -31,4 +31,16 @@ describe ActiveIntelligence::Embedding do
       expect(subject).to have_db_index(:embedding)
     end
   end
+
+  #############################################################################
+  # Associations
+
+  describe 'associations' do
+
+    it 'has many chat message embeddings' do
+      expect(subject).to have_many(:chat_message_embeddings)
+                           .dependent(:destroy)
+                           .inverse_of(:embedding)
+    end
+  end
 end

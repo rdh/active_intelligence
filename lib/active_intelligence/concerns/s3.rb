@@ -1,5 +1,15 @@
 # frozen_string_literal: true
 
+# This concern is intended for use in ActiveIntelligence adapters,
+# but it can easily be used in any class that exposes a settings hash
+# with the required keys:
+# - :region
+# - :access_key_id
+# - :secret_access_key
+# - :bucket
+#
+# :folder is optional.  Alternatively a full path can be passed as key.
+
 require 'aws-sdk-s3'
 
 module ActiveIntelligence

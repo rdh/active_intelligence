@@ -41,6 +41,17 @@ describe ActiveIntelligence::ChatMessage do
                            .class_name(ActiveIntelligence::Chat.to_s)
                            .counter_cache(:messages_count)
     end
+
+    it 'has many chat message embeddings' do
+      expect(subject).to have_many(:chat_message_embeddings)
+                           .dependent(:destroy)
+                           .inverse_of(:message)
+    end
+
+    it 'has many embeddings' do
+      expect(subject).to have_many(:embeddings)
+                           .through(:chat_message_embeddings)
+    end
   end
 
   #############################################################################
