@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_05_234023) do
   create_table "active_intelligence_chat_message_embeddings", force: :cascade do |t|
     t.bigint "chat_message_id", null: false
     t.bigint "embedding_id", null: false
+    t.text "query", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["chat_message_id"], name: "idx_on_chat_message_id_efa2a8993e"

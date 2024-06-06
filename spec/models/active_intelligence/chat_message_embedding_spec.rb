@@ -20,6 +20,7 @@ describe ActiveIntelligence::ChatMessageEmbedding do
     it 'has columns' do
       expect(subject).to have_db_column(:chat_message_id).of_type(:integer).with_options(null: false)
       expect(subject).to have_db_column(:embedding_id).of_type(:integer).with_options(null: false)
+      expect(subject).to have_db_column(:query).of_type(:text).with_options(null: false)
 
       expect(subject).to have_db_column(:created_at).of_type(:datetime)
       expect(subject).to have_db_column(:updated_at).of_type(:datetime)
