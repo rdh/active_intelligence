@@ -27,7 +27,7 @@ module ActiveIntelligence
 
       private
 
-      def message(chat, options)
+      def messages(chat, options)
         prompt = chat.to_prompt(options.delete(:name))
         messages = [{ role: 'system', content: prompt }]
 
