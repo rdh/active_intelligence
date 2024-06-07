@@ -4,11 +4,11 @@ module ActiveIntelligence
   module LLM
     class Adapter < ActiveIntelligence::Adapter
 
-      def generate(prompt, options = {})
+      def generate(prompt, options = {}, &block)
         raise NotImplementedError
       end
 
-      def reply(chat, options = {})
+      def reply(chat, options = {}, &block)
         raise NotImplementedError
       end
     end

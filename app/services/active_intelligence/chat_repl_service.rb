@@ -8,7 +8,7 @@ module ActiveIntelligence
       super
 
       @chat = chat
-      @counter = 1
+      @counter = 0
     end
 
     def call
@@ -46,13 +46,12 @@ module ActiveIntelligence
 
     def history
       @chat.messages.order(:id).each do |message|
-        @counter += 1
         puts [prefix(message.role), message.content].join
       end
     end
 
     def prefix(name)
-      "\n(#{name}:#{@counter})> "
+      "\n(#{name}:#{@counter += 1})> "
     end
 
     def prompt
@@ -62,10 +61,9 @@ module ActiveIntelligence
     def reply(input)
       @chat.messages.create!(role: 'user', content: input)
 
-      @counter += 1
       print prefix(:assistant)
-      puts @chat.reply.content
-      @counter += 1
+      @chat.reply { |delta| print delta }
+      puts
     end
 
     # rubocop:enable Rails/Output
