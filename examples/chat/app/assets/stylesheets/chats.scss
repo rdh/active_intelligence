@@ -1,17 +1,25 @@
 #message-frame {
-  height: 100vh;
-  overflow: scroll;
-  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  height: 500px; // Full height of the container
+  overflow: hidden; // Prevent the frame itself from scrolling
+}
+
+#messages {
+  flex-grow: 1; // Take up the remaining space above the form
+  overflow-y: auto; // Enable vertical scrolling
+  padding-bottom: 10px; // Add padding at the bottom
 }
 
 #message-form {
-  position: fixed;
-  bottom: 0;
-  width: 90%
+  width: 100%; // Ensure the form spans the full width
+  background-color: #343a40; // Match the background color with the message frame
+  padding: 10px; // Add some padding
+  flex-shrink: 0; // Prevent the form from shrinking
 }
 
 #message-content {
-  width: 80%;
+  flex: 1;
   margin-right: 5px;
 }
 
@@ -21,16 +29,32 @@
   padding: 5px;
   border-radius: 10px;
   margin-bottom: 10px;
-  background-color: #555555 ;
-  padding: 10px
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: #555555;
 }
 
 .message-row.user {
   display: flex;
-  justify-content: flex-end
+  justify-content: flex-end;
+  margin-right: 10px;
 }
 
 .message-box.user {
   background-color: #007bff !important;
-  padding: 10px;
+}
+
+/* Custom scrollbar for WebKit browsers */
+#messages::-webkit-scrollbar {
+  width: 12px; // Width of the scrollbar
+}
+
+#messages::-webkit-scrollbar-track {
+  background: #343a40; // Background color of the scrollbar track
+}
+
+#messages::-webkit-scrollbar-thumb {
+  background-color: #888; // Color of the scrollbar thumb
+  border-radius: 10px; // Round the corners of the scrollbar thumb
+  border: 3px solid #343a40; // Adds padding around the scrollbar thumb
 }

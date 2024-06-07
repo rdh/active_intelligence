@@ -21,7 +21,7 @@ module ActiveIntelligence
 
     def reply(options = {}, &block)
       options = options.dup
-      llm = ActiveIntelligence::LLM::Config.new.adapter(options[:adapter])
+      llm = ActiveIntelligence::LLM.adapter(options[:adapter])
 
       reply = llm.reply(self, options, &block)
       return messages.create!(role: 'assistant', content: reply)

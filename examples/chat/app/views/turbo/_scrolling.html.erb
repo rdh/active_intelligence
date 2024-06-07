@@ -1,0 +1,16 @@
+<script>
+    document.addEventListener('turbo:load', () => {
+        const messagesDiv = document.getElementById('messages');
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.addedNodes.length) {
+                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                }
+            });
+        });
+
+        observer.observe(messagesDiv, { childList: true });
+    });
+</script>
