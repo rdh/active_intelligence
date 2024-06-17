@@ -50,8 +50,8 @@ module ActiveIntelligence
       end
     end
 
-    def prefix(name)
-      "\n(#{name}:#{@counter += 1})> "
+    def prefix(role)
+      "\n(#{role}:#{@counter += 1})> "
     end
 
     def prompt

@@ -111,6 +111,65 @@ rake active_intelligence:chat
 rake active_intelligence:chat[id] 
 ```
 
+## Embeddings
+
+```mermaid
+erDiagram
+    Embedding {
+        integer id
+        integer embeddable_id
+        integer embeddable_type
+        vector embedding
+    }
+    Embeddable {
+        integer id
+    }
+    Embeddable ||--o{ Embedding : has_many
+```
+
+### 1. Configuration
+Configure your LLM in `config/ai/embeddings.yml`, something like:
+```yaml
+openai: &openai
+  adapter: openai
+  access_token: <%= ENV.fetch('OPENAI_ACCESS_TOKEN') %>
+  organization_id: <%= ENV.fetch('OPENAI_ORGANIZATION_ID')  %>
+  request_timeout: 30
+  model: text-embedding-3-small
+
+development:
+  <<: *openai
+```
+
+### 2.  include ActiveIntelligence::Embeddable
+
+```
+class Greeting < ApplicationRecord
+  include ActiveIntelligence::Embeddable
+  
+  def self.seed(text)
+    create.add_embedding(text)
+  end
+end
+
+Greeting.seed('Hello darkness, my old friend')
+Greeting.seed('Aloha!')
+```
+
+### 3.  Perform a semantic search
+
+```
+greetings Greeting.semantic_search('Hello')  
+```
+
+### 4.  Caveats
+
+This relies on [pg_vector](https://github.com/pgvector/pgvector) and [the neighbor gem](https://github.com/ankane/neighbor).
+
+The included logic supports simple use cases.  
+For more complex cases, you may want to add an `embedding` vector directly to your model, rather than use the `Embeddable` concern.
+
+
 ## ASR Usage
 
 ### 1. Configuration
