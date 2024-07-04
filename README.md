@@ -44,7 +44,7 @@ development:
 ### 2. Use the LLM
 
 ```ruby
-adapter = ActiveIntelligence::LLM::Config.adapter
+adapter = ActiveIntelligence::LLM.adapter
 puts adapter.generate("Tell me a joke")
 ```
 
@@ -198,7 +198,7 @@ development:
 ### 2. Use the ASR
 
 ```ruby
-adapter = ActiveIntelligence::ASR::Config.adapter
+adapter = ActiveIntelligence::ASR.adapter
 puts adapter.transcribe('spec/data/audio/ebn.wav')
 ```
 
